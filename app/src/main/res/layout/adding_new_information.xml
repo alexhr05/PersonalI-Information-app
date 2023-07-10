@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="332dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="72dp"
+        android:text="Добавяне на нова информация"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/edTxtWebsite"
+        android:layout_width="336dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="484dp"
+        android:ems="10"
+        android:hint="Ex: Google/ https://www.deepl.com/ и други"
+        android:inputType="textPersonName"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtWebsite"
+        android:layout_width="364dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="152dp"
+        android:text="Въведете име на websit или URL линк:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/edTxtEmailUsername"
+        android:layout_width="278dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="344dp"
+        android:ems="10"
+        android:hint="Ex: qwerty@gmail.com/ velikstar и други"
+        android:inputType="textPersonName"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtEmailUsername"
+        android:layout_width="301dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="276dp"
+        android:text="Въведете email или username :"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPassword"
+        android:layout_width="360dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="444dp"
+        android:text="Въведете паролата Ви за това място:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edTxtPassword"
+        android:layout_width="241dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="196dp"
+        android:ems="10"
+        android:hint="Ex: Qwery123/ pOiuyt321 и други"
+        android:inputType="textPassword"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnSaveInformation"
+        android:layout_width="185dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="7"
+        android:shadowRadius="6"
+        android:text="Добави"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

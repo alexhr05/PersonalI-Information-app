@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/ConstraintLayout"
+
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="80dp">
+
+
+    <Button
+        android:id="@+id/btnShowFingerPrint"
+        android:layout_width="229dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="152dp"
+        android:background="@drawable/buttonshape"
+        android:text="Пръстов отпечатък"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="7"
+        android:shadowRadius="6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextPin"
+        android:layout_width="201dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="252dp"
+        android:layout_marginEnd="104dp"
+        android:ems="10"
+        android:hint="PIN"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnEnter"
+        android:layout_width="148dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="256dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="7"
+        android:shadowRadius="6"
+        android:textSize="20dp"
+        android:text="Влез"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAttempt"
+        android:layout_width="135dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="344dp"
+        android:layout_marginEnd="136dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
