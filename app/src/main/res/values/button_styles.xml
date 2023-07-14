@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="button_styles_dark_mode">
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">3</item>
+        <item name="android:shadowDy">7</item>
+        <item name="android:shadowRadius">6</item>
+    </style>
+</resources>

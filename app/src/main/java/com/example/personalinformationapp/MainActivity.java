@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else {
 
-            textViewAttempt.setText("AfterTime");
+            textViewAttempt.setText("Брой опити : "+attempts);
             // The app has been launched before
         }
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
 
             btnLogin.setTextColor(ContextCompat.getColor(this, R.color.white));
-            btnLogin.setBackgroundColor(getResources().getColor(R.color.blue_dark_mode));
 
             textViewAttempt.setTextColor(ContextCompat.getColor(this, R.color.white));
             pinStandard.setTextColor(ContextCompat.getColor(this, R.color.white));

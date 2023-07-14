@@ -52,6 +52,7 @@ public class AddingNewElements extends AppCompatActivity {
             placeToLog = findViewById(R.id.edTxtWebsite);
             emailUsername = findViewById(R.id.edTxtEmailUsername);
             password = findViewById(R.id.edTxtPassword);
+
             txtTitle = findViewById(R.id.txtTitle);
             txtWebsite = findViewById(R.id.txtWebsite);
             txtEmailUsername = findViewById(R.id.txtEmailUsername);
@@ -66,8 +67,6 @@ public class AddingNewElements extends AppCompatActivity {
                 txtEmailUsername.setTextColor(ContextCompat.getColor(this, R.color.white));
                 txtPassword.setTextColor(ContextCompat.getColor(this, R.color.white));
 
-                btnSaveInformation.setBackgroundColor(getResources().getColor(R.color.blue_dark_mode));
-                btnSaveInformation.setTextColor(ContextCompat.getColor(this, R.color.white));
             } else {
                 Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
 
@@ -147,9 +146,6 @@ public class AddingNewElements extends AppCompatActivity {
 
                 txtEmailUsername.setTextColor(ContextCompat.getColor(this, R.color.white));
                 txtPassword.setTextColor(ContextCompat.getColor(this, R.color.white));
-
-                btnSaveInformation.setTextColor(ContextCompat.getColor(this, R.color.white));
-                btnSaveInformation.setBackgroundColor(getResources().getColor(R.color.blue_dark_mode));
 
             } else {
                 Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();

@@ -101,9 +101,8 @@ public class StorageInfo extends AppCompatActivity {
             txtWebsiteTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtUserNameTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtPasswordTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
-            btnAddNewInformation.setBackgroundColor(getResources().getColor(R.color.blue_dark_mode));
-            btnAddNewInformation.setTextColor(getResources().getColor(R.color.white));
-            btnSettings.setBackgroundColor(getResources().getColor(R.color.blue_dark_mode));
+
+            btnSettings.setBackgroundResource(R.drawable.settings);
 
 
         } else {
