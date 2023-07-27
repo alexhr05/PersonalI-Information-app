@@ -31,7 +31,6 @@ public class AboutAuthor extends AppCompatActivity {
         txtBackArrow = findViewById(R.id.txtBackArrow);
 
         String aboutAuthor = readFileFromRawResource(this, R.raw.about_author);
-        Toast.makeText(this, "aboutAuthor="+aboutAuthor, Toast.LENGTH_SHORT).show();
 
         txtParagraph.setText(aboutAuthor);
 

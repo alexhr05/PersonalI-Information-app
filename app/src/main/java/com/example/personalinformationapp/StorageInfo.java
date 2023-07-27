@@ -55,7 +55,6 @@ public class StorageInfo extends AppCompatActivity {
 
         String filepath = "MyDirs";
         File file = new File(getExternalFilesDir(filepath), "Information.txt");
-        //Toast.makeText(this, "getExternalFilesDir(filepath)="+getExternalFilesDir(filepath), Toast.LENGTH_SHORT).show();
         String[] rowInfo;
         int br=0;
         try {

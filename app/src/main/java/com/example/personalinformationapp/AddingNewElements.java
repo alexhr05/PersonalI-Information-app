@@ -33,7 +33,7 @@ public class AddingNewElements extends AppCompatActivity {
     Button btnSaveInformation;
     Button btnSaveimg;
     EditText placeToLog, emailUsername, password;
-    TextView textView, txtTitle, txtWebsite, txtEmailUsername, txtPassword;
+    TextView textView, txtTitle, txtWebsite, txtEmailUsername, txtPassword, txtError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +43,6 @@ public class AddingNewElements extends AppCompatActivity {
         int caseField = getIntent().getIntExtra("caseFlag", -1);
         //FileEncryptionExample fileEncryptionExample = new FileEncryptionExample();
 
-        Toast.makeText(this, "username="+getIntent().getStringExtra("username"), Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "caseField"+getIntent().getIntExtra("caseFlag", -1), Toast.LENGTH_SHORT).show();
         if(caseField == 0){
 
             setContentView(R.layout.adding_new_information);
@@ -57,6 +55,7 @@ public class AddingNewElements extends AppCompatActivity {
             txtWebsite = findViewById(R.id.txtWebsite);
             txtEmailUsername = findViewById(R.id.txtEmailUsername);
             txtPassword = findViewById(R.id.txtPassword);
+            txtError = findViewById(R.id.txtError);
 
 
 
@@ -111,7 +110,9 @@ public class AddingNewElements extends AppCompatActivity {
                         }
 
                     }else{
-                        Toast.makeText(AddingNewElements.this, "Някое от полетата не е попълнено", Toast.LENGTH_SHORT).show();
+                       // showCustomToast("Някое от полетата не е попълнено", android.R.color.holo_red_light);
+                        //Toast.makeText(AddingNewElements.this,"Някое от полетата не е попълнено" , Toast.LENGTH_SHORT).show();
+                        txtError.setText("Някое от полетата не е попълнено!");
                     }
                 }
             });
@@ -130,6 +131,7 @@ public class AddingNewElements extends AppCompatActivity {
             placeToLog = findViewById(R.id.edTxtWebsite);
             emailUsername = findViewById(R.id.edTxtEmailUsername);
             password = findViewById(R.id.edTxtPassword);
+
             // When I go to edit mode show info for this field
             placeToLog.setText(placeToLogToCheck);
             emailUsername.setText(usernameToCheck);
@@ -158,12 +160,10 @@ public class AddingNewElements extends AppCompatActivity {
                     String txtPlaceToLog = placeToLog.getText().toString();
                     String txtEmailUsername = emailUsername.getText().toString();
                     String txtpassword = password.getText().toString();
+
                     // Get new info from edit text field and then write it in file
                     if(!txtPlaceToLog.isEmpty() && !txtEmailUsername.isEmpty() && !txtpassword.isEmpty()){
 
-                        //Toast.makeText(AddingNewElements.this, "place="+txtPlaceToLog, Toast.LENGTH_SHORT).show();
-                        //Toast.makeText(AddingNewElements.this, "EmailUsername="+txtEmailUsername, Toast.LENGTH_SHORT).show();
-                        //Toast.makeText(AddingNewElements.this, "Password="+txtpassword, Toast.LENGTH_SHORT).show();
                         String filename = "Information.txt";
                         String filepath = "MyDirs";
                         // Create a File object representing the specific file
@@ -204,7 +204,6 @@ public class AddingNewElements extends AppCompatActivity {
                             if (positionElementToCheck >= 0 && positionElementToCheck < lines.size()) {
                                 lines.set(positionElementToCheck, encryptedData);
                             }
-                            Toast.makeText(AddingNewElements.this, ""+lines.get(positionElementToCheck), Toast.LENGTH_SHORT).show();
 
                             // Write the modified content back to the file
                             try {
@@ -219,11 +218,7 @@ public class AddingNewElements extends AppCompatActivity {
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-                            //storageInfo.getItems().add(new Item(txtPlaceToLog,txtEmailUsername,txtpassword));
-                            //storageInfo.getRecyclerView().setAdapter(new MyAdapter(getApplicationContext(),storageInfo.items));
-                            //textView = findViewById(R.id.textView7);
-                            /*textView.setText(""+storageInfo.items.get(storageInfo.items.size()-1).getPlaceToLog()+";"+storageInfo.items.get(storageInfo.items.size()-1).getEmailUsername()+
-                                    ";"+storageInfo.items.get(storageInfo.items.size()-1).getPassword());*/
+
                             Intent intent = new Intent(AddingNewElements.this, StorageInfo.class);
                             startActivity(intent);
 
@@ -231,9 +226,7 @@ public class AddingNewElements extends AppCompatActivity {
 
                     }else{
                         Toast.makeText(AddingNewElements.this, "Някое от полетата не е попълнено", Toast.LENGTH_SHORT).show();
-                        //Toast.makeText(AddingNewElements.this, "txtPlaceToLog.isEmpty()="+txtPlaceToLog.isEmpty(), Toast.LENGTH_SHORT).show();
-                        //Toast.makeText(AddingNewElements.this, "txtEmailUsername.isEmpty()="+txtEmailUsername.isEmpty(), Toast.LENGTH_SHORT).show();
-                        //Toast.makeText(AddingNewElements.this, "txtpassword.isEmpty()="+txtpassword.isEmpty(), Toast.LENGTH_SHORT).show();
+
                     }
                 }
             });
@@ -245,6 +238,19 @@ public class AddingNewElements extends AppCompatActivity {
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
         return Environment.MEDIA_MOUNTED.equals(state);
+    }
+
+    public void showCustomToast(String message, int textColor) {
+        Toast toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT);
+
+        // Get the Toast's TextView and set its background color
+        View view = toast.getView();
+
+        // Get the TextView of the Toast and set its text color
+        TextView text = view.findViewById(android.R.id.message);
+        text.setTextColor(textColor);
+
+        toast.show();
     }
 
 }

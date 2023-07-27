@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,14 +35,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     List<Item> items;
     List<String> hideItemPassword;
     Button button;
-
+    LinearLayout linearLayout;
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public ActivityManager.TaskDescription.Builder linearLayout;
         TextView placeToLog, emailUsername, password;
         Button  btnViewInfo, btnEditInfo, btnDeleteInfo;
-       //LinearLayout linearLayout;
+
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -51,7 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             btnEditInfo = itemView.findViewById(R.id.btnEditInfo);
             btnViewInfo = itemView.findViewById(R.id.btnViewInfo);
             btnDeleteInfo = itemView.findViewById(R.id.btnDeleteInfo);
-        //    linearLayout = itemView.findViewById(R.id.LineBorder);
+           //linearLayout = itemView.findViewById(R.id.LineBorder);
         }
     }
     public MyAdapter(Context context, List<Item> items, List<String> hideItemPassword){
@@ -66,6 +68,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.information_view,parent,false));
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.placeToLog.setText(items.get(position).getPlaceToLog());
@@ -82,6 +85,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             holder.emailUsername.setTextColor(ContextCompat.getColor(context, R.color.white));
             holder.password.setTextColor(ContextCompat.getColor(context, R.color.white));
 
+         //   holder.linearLayout.setBackgroundColor(context.getResources().getColor(R.color.white));
+
             holder.btnViewInfo.setTextColor(ContextCompat.getColor(context, R.color.white));
             holder.btnViewInfo.setBackgroundColor(context.getResources().getColor(R.color.blue_dark_mode));
             holder.btnDeleteInfo.setTextColor(ContextCompat.getColor(context, R.color.white));
@@ -90,8 +95,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             holder.btnEditInfo.setBackgroundColor(context.getResources().getColor(R.color.blue_dark_mode));
 
         } else {
-            //Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(context, "LIGHT MODE", Toast.LENGTH_SHORT).show();
+            //holder.linearLayout.setBackgroundColor(context.getResources().getColor(R.color.black));
         }
         Log.d("hidePassword",hideItemPassword.get(holder.getAdapterPosition()));
         // Show info in Edit mode

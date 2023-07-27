@@ -37,7 +37,6 @@ public class HelpPage extends AppCompatActivity {
         txtBackArrow = findViewById(R.id.txtBackArrow);
 
         String helpText = readFileFromRawResource(this, R.raw.help_info);
-        Toast.makeText(this, "text="+helpText, Toast.LENGTH_SHORT).show();
 
         txtParagraph.setText(helpText);
 

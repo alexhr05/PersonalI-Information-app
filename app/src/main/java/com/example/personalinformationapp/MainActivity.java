@@ -22,6 +22,7 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -61,22 +62,49 @@ public class MainActivity extends AppCompatActivity {
 
         // Check if the "firstTime" flag is set to true
         boolean isFirstTime = sharedPreferences.getBoolean("firstTime", true);
+        //Check if is installed
+        boolean isInstalled = AppUtils.isMyAppInstalled(this);
 
-        if (isFirstTime) {
+        if (isFirstTime && isInstalled) {
             // This is the first time the app is being launched
+            try {
+                String filenameInformation = "Information.txt";
+                String filenameSettings = "Information.txt";
+                String filepath = "MyDirs";
+                File myExternalFile = new File(getExternalFilesDir(filepath), filenameInformation);
+                FileOutputStream fileInformation = new FileOutputStream(myExternalFile);
+                File myExternalFileSettings = new File(getExternalFilesDir(filepath), filenameSettings);
+                FileOutputStream fileSettings = new FileOutputStream(myExternalFileSettings);
+
+
+                fileInformation.write("".getBytes());
+                fileInformation.close();
+                fileSettings.write("".getBytes());
+                fileSettings.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean("firstTime", false);
             editor.apply();
+
             Intent intent = new Intent(MainActivity.this, FirstLoginLogic.class);
             startActivity(intent);
-            textViewAttempt.setText("firstTime");
+          //  textViewAttempt.setText("firstTime");
 
         } else {
 
-            textViewAttempt.setText("Брой опити : "+attempts);
+           // textViewAttempt.setText("Брой опити : "+attempts);
             // The app has been launched before
         }
+
+
+
+
+
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
@@ -156,23 +184,17 @@ public class MainActivity extends AppCompatActivity {
             while ((line = bufferedReader.readLine()) != null) {
                 
                 if(!line.isEmpty()) {
-                    Toast.makeText(this, "line="+line, Toast.LENGTH_SHORT).show();
                     if(line.equals("true")){
-                        Toast.makeText(this, "TRUEE", Toast.LENGTH_SHORT).show();
                         biometricPrompt.authenticate(promptInfo);
                     }else if(line.equals("false")){
-                        Toast.makeText(this, "FALSE", Toast.LENGTH_SHORT).show();
                         logInBiometric = true;
                     }else{
-                        //Toast.makeText(this, "PAROLa", Toast.LENGTH_SHORT).show();
                         String password = "YourPassword";
                         EncryptionUtils object = new EncryptionUtils();
                         decryptedPin = object.decrypt(password, line);
 
                         obj.setPin(Integer.parseInt(decryptedPin));
-                        Toast.makeText(this, "PAROLa", Toast.LENGTH_SHORT).show();
                     }
-                    Toast.makeText(this, "KRAI="+line, Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -212,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }else{
                        // textViewAttempt.setText(""+obj.checkPin(pin));
-                        textViewAttempt.setText("Брой опити : "+attempts);
+                        textViewAttempt.setText("Сбъркахте пина си! Имате " + attempts + " оставащи опита.");
 
                         attempts--;
 

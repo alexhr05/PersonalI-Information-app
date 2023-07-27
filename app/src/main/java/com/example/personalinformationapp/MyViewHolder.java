@@ -25,9 +25,6 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         btnEditInfo = itemView.findViewById(R.id.btnEditInfo);
         btnDeleteInfo = itemView.findViewById(R.id.btnDeleteInfo);
 
-     //   imgBtnEditMode.setId(R.id.placeToLog);
-
-
     }
 }
 

@@ -20,8 +20,6 @@ public class SecondAuthentication {
     public boolean checkPin(int pin){
 
         if(getPin() == pin){
-
-            Log.d("PinStandard", "" + getPin());
             return true;
         }else{
             return false;

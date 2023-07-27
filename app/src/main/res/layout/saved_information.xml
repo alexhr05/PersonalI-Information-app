@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,6 +11,11 @@
         android:id="@+id/btnAddNewInformation"
         android:layout_width="53dp"
         android:layout_height="44dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="339dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="644dp"
         android:background="@drawable/buttonshape"
@@ -28,6 +33,11 @@
         android:id="@+id/btnSettings"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="349dp"
+        android:layout_marginTop="7dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="694dp"
         android:background="@drawable/settings"
@@ -46,6 +56,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
         android:text="Website"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,8 +68,11 @@
         android:id="@+id/txtUserNameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="57dp"
         android:text="Username"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,14 +80,17 @@
 
     <TextView
         android:id="@+id/txtPasswordTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="103dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="236dp"
+        android:layout_marginLeft="69dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="72dp"
         android:text="Password"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="18dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/item_view"
@@ -82,4 +101,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

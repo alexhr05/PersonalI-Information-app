@@ -36,9 +36,7 @@ public class FirstLoginLogic extends AppCompatActivity {
                 pinField = edTextPin.getText().toString();
                 repeatPinField = edTextPin.getText().toString();
                 if(!pinField.isEmpty() && !repeatPinField.isEmpty() && pinField.equals(repeatPinField)){
-                    Toast.makeText(FirstLoginLogic.this, "Minava Edno", Toast.LENGTH_SHORT).show();
                     if(isExternalStorageWritable()){
-                        Toast.makeText(FirstLoginLogic.this, "Minava 22222", Toast.LENGTH_SHORT).show();
                         try {
                             String filename = "Settings.txt";
                             String filepath = "MyDirs";
@@ -64,8 +62,7 @@ public class FirstLoginLogic extends AppCompatActivity {
                     }
                 }else{
                     Toast.makeText(FirstLoginLogic.this, "Някое от полетата не са попълнение или не сте въвели PIN в двете полета", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(FirstLoginLogic.this, "pinField"+pinField, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(FirstLoginLogic.this, "repeatPinField"+repeatPinField, Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
