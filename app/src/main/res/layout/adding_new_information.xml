@@ -11,11 +11,17 @@
         android:layout_height="60dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="564dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="9dp"
         android:text=""
         android:textColor="@android:color/holo_red_dark"
         android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSaveInformation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtTitle"
@@ -34,14 +40,14 @@
         android:id="@+id/edTxtWebsite"
         android:layout_width="336dp"
         android:layout_height="42dp"
-        android:layout_marginEnd="36dp"
         android:layout_marginBottom="484dp"
         android:ems="10"
         android:hint="Ex: Google/ https://www.deepl.com/ и други"
         android:inputType="textPersonName"
         android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtWebsite"
@@ -61,13 +67,12 @@
         android:layout_width="278dp"
         android:layout_height="44dp"
         android:layout_marginEnd="72dp"
-        android:layout_marginBottom="344dp"
         android:ems="10"
         android:hint="Ex: qwerty@gmail.com/ velikstar и други"
         android:inputType="textPersonName"
         android:textSize="17dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="343dp" />
 
     <TextView
         android:id="@+id/txtEmailUsername"
@@ -85,32 +90,34 @@
         android:id="@+id/txtPassword"
         android:layout_width="360dp"
         android:layout_height="27dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="444dp"
+        android:layout_marginTop="40dp"
         android:text="Въведете паролата Ви за това място:"
         android:textColor="@color/black"
         android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/edTxtEmailUsername" />
 
     <EditText
         android:id="@+id/edTxtPassword"
         android:layout_width="241dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="196dp"
+        android:layout_height="55dp"
         android:ems="10"
         android:hint="Ex: Qwery123/ pOiuyt321 и други"
-        android:inputType="textPassword"
+        android:inputType="textPersonName"
         android:textSize="17dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/txtError"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPassword"
+        app:layout_constraintVertical_bias="0.627" />
 
     <Button
         android:id="@+id/btnSaveInformation"
         android:layout_width="185dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="108dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
         android:layout_marginBottom="52dp"
         android:background="@drawable/buttonshape"
         android:shadowColor="#000000"
@@ -121,6 +128,9 @@
         android:textColor="#FFFFFF"
         android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtError" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

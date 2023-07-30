@@ -27,9 +27,6 @@ public class FirstLoginLogic extends AppCompatActivity {
         edTextPin = findViewById(R.id.edTextPin);
         edTextRepeatPin = findViewById(R.id.edTextRepeatPin);
 
-
-
-
         btnContinueSecondStep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

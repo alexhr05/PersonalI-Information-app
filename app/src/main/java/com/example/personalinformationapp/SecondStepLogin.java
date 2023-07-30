@@ -102,6 +102,9 @@ public class SecondStepLogin extends AppCompatActivity {
                     }
 
                     Intent intent = new Intent(SecondStepLogin.this, MainActivity.class);
+                    // This is for just installed app to make password(PIN)
+                    int isGoRegister = 1;
+                    intent.putExtra("isGoRegister", isGoRegister);
                     startActivity(intent);
 
                 }

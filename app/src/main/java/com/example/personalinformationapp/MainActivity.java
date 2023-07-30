@@ -7,12 +7,10 @@ import androidx.biometric.BiometricPrompt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -62,14 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Check if the "firstTime" flag is set to true
         boolean isFirstTime = sharedPreferences.getBoolean("firstTime", true);
-        //Check if is installed
-        boolean isInstalled = AppUtils.isMyAppInstalled(this);
 
-        if (isFirstTime && isInstalled) {
+        if (isFirstTime) {
             // This is the first time the app is being launched
             try {
                 String filenameInformation = "Information.txt";
-                String filenameSettings = "Information.txt";
+                String filenameSettings = "Settings.txt";
                 String filepath = "MyDirs";
                 File myExternalFile = new File(getExternalFilesDir(filepath), filenameInformation);
                 FileOutputStream fileInformation = new FileOutputStream(myExternalFile);
@@ -93,11 +89,12 @@ public class MainActivity extends AppCompatActivity {
 
             Intent intent = new Intent(MainActivity.this, FirstLoginLogic.class);
             startActivity(intent);
-          //  textViewAttempt.setText("firstTime");
+
+           //  textViewAttempt.setText("firstTime");
 
         } else {
 
-           // textViewAttempt.setText("Брой опити : "+attempts);
+            // textViewAttempt.setText("Брой опити : "+attempts);
             // The app has been launched before
         }
 
