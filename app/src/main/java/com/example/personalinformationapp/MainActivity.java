@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     BiometricPrompt.PromptInfo promptInfo;
     ConstraintLayout constraintLayout;
     EditText pinStandard;
-    TextView textViewAttempt;
+    TextView textViewAttempt, txtTitleForPIN;
     Button btnLogin, btnShowFingerPrint;
     String pinString;
     int pin;
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         pinStandard =  (EditText) findViewById(R.id.editTextPin);
         textViewAttempt = findViewById(R.id.textViewAttempt);
+        txtTitleForPIN = findViewById(R.id.txtTitleForPIN);
 
         btnLogin = findViewById(R.id.btnEnter);
         btnShowFingerPrint = findViewById(R.id.btnShowFingerPrint);
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
             textViewAttempt.setTextColor(ContextCompat.getColor(this, R.color.white));
             pinStandard.setTextColor(ContextCompat.getColor(this, R.color.white));
-
+            txtTitleForPIN.setTextColor(ContextCompat.getColor(this, R.color.white));
 
 
 

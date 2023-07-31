@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,15 +9,14 @@
 
     <Button
         android:id="@+id/btnAddNewInformation"
-        android:layout_width="53dp"
-        android:layout_height="44dp"
+        android:layout_width="@dimen/_43sdp"
+        android:layout_height="@dimen/_43ssp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="339dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginBottom="644dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/buttonshape"
         android:shadowColor="#000000"
         android:shadowDx="3"
@@ -26,8 +25,12 @@
         android:text="+"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/item_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.621"
+        app:layout_constraintStart_toEndOf="@+id/txtPasswordTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.368" />
 
     <Button
         android:id="@+id/btnSettings"
@@ -36,10 +39,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="349dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="694dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/settings"
         android:shadowColor="#000000"
         android:shadowDx="3"
@@ -47,22 +48,29 @@
         android:shadowRadius="6"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/btnAddNewInformation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toEndOf="@+id/txtPasswordTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txtWebsiteTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
+        android:layout_marginTop="52dp"
         android:text="Website"
         android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/item_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19" />
 
     <TextView
         android:id="@+id/txtUserNameTitle"
@@ -71,34 +79,42 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="57dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
         android:text="Username"
         android:textSize="18dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toEndOf="@+id/txtWebsiteTitle"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtPasswordTitle"
-        android:layout_width="103dp"
-        android:layout_height="wrap_content"
+        android:layout_width="84dp"
+        android:layout_height="23dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="236dp"
-        android:layout_marginLeft="69dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginTop="52dp"
         android:text="Password"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/item_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintStart_toEndOf="@+id/txtUserNameTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/item_view"
-        android:layout_width="402dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
         android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtUserNameTitle"
+        app:layout_constraintVertical_bias="0.075" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
