@@ -11,7 +11,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
-public class EncryptionUtils {
+public class   EncryptionUtils {
 
     private static final String SECRET_KEY_ALGORITHM = "PBKDF2WithHmacSHA1";
     private static final String ENCRYPTION_ALGORITHM = "AES/ECB/PKCS5Padding";

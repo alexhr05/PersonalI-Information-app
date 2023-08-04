@@ -14,12 +14,11 @@
         android:layout_centerInParent="true"
         android:layout_marginStart="19dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="18dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/emailUsername"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,12 +31,15 @@
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="156dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/btnDeleteInfo"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/password"
@@ -51,8 +53,8 @@
         android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
-        app:layout_constraintStart_toEndOf="@+id/emailUsername"
+        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
@@ -76,7 +78,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="2dp"
         android:shadowColor="#000000"
         android:shadowDx="3"
@@ -86,6 +88,8 @@
         android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -96,8 +100,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="9dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="2dp"
         android:shadowColor="#000000"
         android:shadowDx="3"
         android:shadowDy="7"
@@ -105,6 +111,8 @@
         android:text="Edit"
         android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/placeToLog"
         app:layout_constraintVertical_bias="0.0" />
@@ -116,9 +124,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="2dp"
         android:shadowColor="#000000"
         android:shadowDx="3"
         android:shadowDy="7"
@@ -126,9 +132,24 @@
         android:text="Delete"
         android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnViewInfo"
-        app:layout_constraintStart_toEndOf="@+id/btnEditInfo"
-        app:layout_constraintTop_toBottomOf="@+id/emailUsername"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.38"
+         />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70"
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

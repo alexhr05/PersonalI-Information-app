@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
     String decryptedPin;
     SecondAuthentication obj;
 
-    // PINOA - Pesonal Information Numbers Of Alex
+    // PIS - Pesonal Information Stuff
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
