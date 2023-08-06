@@ -85,7 +85,7 @@
 
     <TextView
         android:id="@+id/txtHelp"
-        android:layout_width="@dimen/_234sdp"
+        android:layout_width="@dimen/_233sdp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
