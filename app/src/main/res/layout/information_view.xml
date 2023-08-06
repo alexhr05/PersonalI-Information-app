@@ -6,17 +6,17 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/placeToLog22"
-        android:layout_width="96dp"
-        android:layout_height="19dp"
+        android:id="@+id/placeToLog"
+        android:layout_width="@dimen/_74sdp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="TextView"
         android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textSize="@dimen/_12sdp"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,34 +24,33 @@
 
     <TextView
         android:id="@+id/emailUsername"
-        android:layout_width="106dp"
-        android:layout_height="19dp"
-
+        android:layout_width="@dimen/_83sdp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="TextView"
         android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textSize="@dimen/_12sdp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/password"
-        android:layout_width="89dp"
+        android:layout_width="@dimen/_74sdp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="TextView"
         android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textSize="@dimen/_12sdp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -72,7 +71,7 @@
     <Button
         android:id="@+id/btnViewInfo"
         android:layout_width="wrap_content"
-        android:layout_height="38dp"
+        android:layout_height="@dimen/_30sdp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
@@ -83,23 +82,23 @@
         android:shadowDy="7"
         android:shadowRadius="6"
         android:text="VIEW"
-        android:textSize="13dp"
+        android:textSize="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.928" />
 
     <Button
         android:id="@+id/btnEditInfo"
-        android:layout_width="91dp"
-        android:layout_height="41dp"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="@dimen/_30sdp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="2dp"
         android:shadowColor="#000000"
@@ -107,18 +106,18 @@
         android:shadowDy="7"
         android:shadowRadius="6"
         android:text="Edit"
-        android:textSize="13dp"
+        android:textSize="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/placeToLog"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnDeleteInfo"
-        android:layout_width="87dp"
-        android:layout_height="39dp"
+        android:layout_width="@dimen/_74sdp"
+        android:layout_height="@dimen/_30sdp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
@@ -128,10 +127,10 @@
         android:shadowDy="7"
         android:shadowRadius="6"
         android:text="Delete"
-        android:textSize="13dp"
+        android:textSize="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.311"
+        app:layout_constraintHorizontal_bias="0.361"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/emailUsername"
         app:layout_constraintVertical_bias="1.0" />
@@ -151,18 +150,5 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.70"
          />
-
-    <EditText
-        android:id="@+id/placeToLog"
-        android:layout_width="127dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.551"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

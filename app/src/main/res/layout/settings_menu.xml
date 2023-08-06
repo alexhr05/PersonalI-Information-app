@@ -5,6 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEndBottomSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStartTopSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.29" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStartSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEndSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
     <TextView
         android:id="@+id/txtBack"
         android:layout_width="306dp"
@@ -12,13 +40,15 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="633dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="112dp"
         android:text="Back"
         android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
+        app:layout_constraintTop_toTopOf="@+id/guidelineEndBottomSettings"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtBackArrow"
@@ -27,13 +57,15 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="255dp"
-        android:layout_marginTop="633dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="112dp"
         android:text=">"
         android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
+        app:layout_constraintHorizontal_bias="0.935"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
+        app:layout_constraintTop_toTopOf="@+id/guidelineEndBottomSettings"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtTitle"
@@ -42,13 +74,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="103dp"
         android:layout_marginTop="63dp"
-        android:layout_marginEnd="100dp"
         android:text="Settings menu"
         android:textSize="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineStartTopSettings"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtHelp"
@@ -57,28 +90,32 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="313dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="52dp"
         android:text="Help"
         android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/txtAuthorInfo"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
+        app:layout_constraintTop_toTopOf="@+id/guidelineStartTopSettings"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtHelpArrow"
-        android:layout_width="64dp"
-        android:layout_height="26dp"
+        android:layout_width="66dp"
+        android:layout_height="29dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="258dp"
-        android:layout_marginTop="314dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginTop="52dp"
         android:text=">"
         android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/txtAuthorInfoArrow"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
+        app:layout_constraintTop_toTopOf="@+id/guidelineStartTopSettings"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtAuthorInfo"
@@ -87,28 +124,30 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="388dp"
-        android:layout_marginEnd="64dp"
         android:text="About author"
         android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineEndBottomSettings"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
+        app:layout_constraintTop_toTopOf="@+id/guidelineStartTopSettings"
+        app:layout_constraintVertical_bias="0.649" />
 
     <TextView
         android:id="@+id/txtAuthorInfoArrow"
         android:layout_width="64dp"
-        android:layout_height="26dp"
+        android:layout_height="27dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="258dp"
-        android:layout_marginTop="389dp"
-        android:layout_marginEnd="68dp"
         android:text=">"
         android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineEndBottomSettings"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
+        app:layout_constraintTop_toTopOf="@+id/guidelineStartTopSettings"
+        app:layout_constraintVertical_bias="0.65" />
 
     <Switch
         android:id="@+id/btnSwitchFingerprint"
@@ -117,13 +156,16 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="198dp"
-        android:layout_marginEnd="96dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="28dp"
         android:text="Use Fingerprint"
         android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineStartTopSettings"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
+        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imgViewFingerPrint"
@@ -132,10 +174,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="189dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="180dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineStartTopSettings"
+        app:layout_constraintEnd_toStartOf="@+id/btnSwitchFingerprint"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038"
         app:srcCompat="@drawable/fingerprint_black" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

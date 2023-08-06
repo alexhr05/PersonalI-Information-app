@@ -44,12 +44,16 @@
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="92dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="17dp"
         android:text="About Author"
         android:textSize="34dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtParagraph"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtParagraph"
