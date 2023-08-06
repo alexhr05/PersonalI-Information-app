@@ -6,54 +6,95 @@
     android:layout_height="match_parent">
 
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEndHelpPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStartHelpPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStartTopHelpPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEndBottomHelpPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
     <TextView
         android:id="@+id/txtParagraph"
-        android:layout_width="372dp"
-        android:layout_height="481dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="@dimen/_288sdp"
+        android:layout_height="@dimen/_390sdp"
+        android:layout_marginBottom="25dp"
         android:paddingStart="16dp"
         android:paddingTop="8dp"
         android:paddingEnd="12dp"
         android:paddingBottom="8dp"
         android:text="Info For Text"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineEndBottomHelpPage"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndHelpPage"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartHelpPage"
+        app:layout_constraintTop_toTopOf="@+id/guidelineStartTopHelpPage"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txtBack"
-        android:layout_width="306dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="696dp"
+        android:layout_width="@dimen/_234sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="52dp"
         android:text="Back"
-        android:textSize="20dp"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartHelpPage"
+        app:layout_constraintTop_toTopOf="@+id/guidelineEndBottomHelpPage"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtBackArrow"
-        android:layout_width="64dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="696dp"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="52dp"
         android:text=">"
-        android:textSize="24dp"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartHelpPage"
+        app:layout_constraintTop_toTopOf="@+id/guidelineEndBottomHelpPage"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtTitle"
-        android:layout_width="221dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
         android:text="Help For App"
-        android:textSize="34dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:textSize="@dimen/_26sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineStartTopHelpPage"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndHelpPage"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartHelpPage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

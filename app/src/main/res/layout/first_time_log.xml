@@ -5,75 +5,115 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStartFirstLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEndFirstLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEndBottomFirstLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStartTopFirstLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
     <EditText
         android:id="@+id/edTextRepeatPin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="480dp"
         android:ems="10"
         android:hint="Repeat PIN"
         android:inputType="numberPassword"
         android:maxLength="4"
-        android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineEndBottomFirstLogin"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndFirstLogin"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartFirstLogin"
+        app:layout_constraintTop_toTopOf="@+id/guidelineStartTopFirstLogin"
+        app:layout_constraintVertical_bias="0.823" />
 
     <EditText
         android:id="@+id/edTextPin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="108dp"
         android:ems="10"
         android:hint="PIN"
         android:inputType="numberPassword"
         android:maxLength="4"
-        android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toTopOf="@+id/pin2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndFirstLogin"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartFirstLogin"
+        app:layout_constraintTop_toTopOf="@+id/guidelineStartTopFirstLogin"
+        app:layout_constraintVertical_bias="0.025" />
 
     <TextView
         android:id="@+id/Pin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="204dp"
-        android:text="Write your password(PIN): "
-        android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="24dp"
+        android:text="Write your PIN: "
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineEndBottomFirstLogin"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndFirstLogin"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartFirstLogin"
+        app:layout_constraintTop_toTopOf="@+id/guidelineStartTopFirstLogin"
+        app:layout_constraintVertical_bias="0.033" />
 
     <TextView
         android:id="@+id/pin2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="396dp"
-        android:text="Repeat your password(PIN): "
-        android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Repeat your PIN: "
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toTopOf="@+id/edTextRepeatPin"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndFirstLogin"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartFirstLogin"
+        app:layout_constraintTop_toTopOf="@+id/guidelineStartTopFirstLogin"
+        app:layout_constraintVertical_bias="0.805" />
 
     <TextView
         android:id="@+id/pin3"
-        android:layout_width="304dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:text="First Step To Login "
-        android:textSize="35dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/_26sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineStartTopFirstLogin"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndFirstLogin"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartFirstLogin"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnContinueSecondStep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="104dp"
         android:text="Continue"
-        android:textSize="22dp"
+        android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndFirstLogin"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartFirstLogin"
+        app:layout_constraintTop_toTopOf="@+id/guidelineEndBottomFirstLogin"
+        app:layout_constraintVertical_bias="0.592" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,10 +25,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Settings extends AppCompatActivity {
-    private Switch btnSwitchFingerprint;
+    private Switch btnSwitchFingerprint, btnSwitchPin;
     private TextView txtHelp, txtHelpArrow, txtAuthorInfo, txtAuthorInfoArrow, txtBack, txtBackArrow, txtTitle;
     private String fingerprintStatement;
-    private ImageView imgViewFingerPrint;
+    private ImageView imgViewFingerPrint, imgViewPin;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,6 +36,8 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.settings_menu);
         btnSwitchFingerprint = findViewById(R.id.btnSwitchFingerprint);
         imgViewFingerPrint = findViewById(R.id.imgViewFingerPrint);
+        imgViewPin = findViewById(R.id.imgViewPinIcon);
+        btnSwitchPin = findViewById(R.id.btnSwitchPin);
 
         txtHelp = findViewById(R.id.txtHelp);
         txtHelpArrow = findViewById(R.id.txtHelp);
@@ -89,7 +91,7 @@ public class Settings extends AppCompatActivity {
         }
         seperateInfoFromFile = fingerprintStatement.split(" ");
         btnSwitchFingerprint.setChecked(Boolean.parseBoolean(seperateInfoFromFile[1]));
-
+        
         // lambda function
         txtHelp.setOnClickListener(new View.OnClickListener() {
             @Override

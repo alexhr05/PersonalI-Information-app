@@ -1,6 +1,7 @@
 package com.example.personalinformationapp;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -31,6 +32,19 @@ public class SecondStepLogin extends AppCompatActivity {
         btnActivateFingerprint = findViewById(R.id.btnActivateFingerprint);
         btnContinueToLogin = findViewById(R.id.btnContinueToLogin);
         logWithBiometric = false;
+
+        int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+
+        if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
+            Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
+
+            btnActivateFingerprint.setTextColor(ContextCompat.getColor(this, R.color.white));
+            btnContinueToLogin.setTextColor(ContextCompat.getColor(this, R.color.white));
+
+        } else {
+            Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
+
+        }
 
         btnActivateFingerprint.setOnClickListener(new View.OnClickListener() {
             @Override

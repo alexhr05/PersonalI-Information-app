@@ -1,6 +1,7 @@
 package com.example.personalinformationapp;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,6 +28,19 @@ public class FirstLoginLogic extends AppCompatActivity {
         btnContinueSecondStep = findViewById(R.id.btnContinueSecondStep);
         edTextPin = findViewById(R.id.edTextPin);
         edTextRepeatPin = findViewById(R.id.edTextRepeatPin);
+
+
+        int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+
+        if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
+            Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
+
+            btnContinueSecondStep.setTextColor(ContextCompat.getColor(this, R.color.white));
+
+        } else {
+            Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
+
+        }
 
         btnContinueSecondStep.setOnClickListener(new View.OnClickListener() {
             @Override

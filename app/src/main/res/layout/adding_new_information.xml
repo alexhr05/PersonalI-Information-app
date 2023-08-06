@@ -122,10 +122,10 @@
     <Button
         android:id="@+id/btnSaveInformation"
         android:layout_width="@dimen/_132sdp"
-        android:layout_height="@dimen/_35sdp"
+        android:layout_height="@dimen/_42sdp"
         android:layout_marginTop="9dp"
         android:layout_marginBottom="52dp"
-        android:background="@drawable/buttonshape"
+
         android:shadowColor="#000000"
         android:shadowDx="3"
         android:shadowDy="7"
