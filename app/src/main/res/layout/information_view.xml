@@ -6,9 +6,9 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/placeToLog"
-        android:layout_width="112dp"
-        android:layout_height="21dp"
+        android:id="@+id/placeToLog22"
+        android:layout_width="96dp"
+        android:layout_height="19dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
@@ -18,14 +18,14 @@
         android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/emailUsername"
-        android:layout_width="112dp"
-        android:layout_height="21dp"
+        android:layout_width="106dp"
+        android:layout_height="19dp"
 
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -34,12 +34,10 @@
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnDeleteInfo"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/password"
@@ -95,8 +93,8 @@
 
     <Button
         android:id="@+id/btnEditInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="38dp"
+        android:layout_width="91dp"
+        android:layout_height="41dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
@@ -112,15 +110,15 @@
         android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.307"
+        app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/placeToLog"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnDeleteInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="38dp"
+        android:layout_width="87dp"
+        android:layout_height="39dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
@@ -133,8 +131,10 @@
         android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.531"
-        app:layout_constraintStart_toStartOf="@+id/guideline" />
+        app:layout_constraintHorizontal_bias="0.311"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/emailUsername"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -151,5 +151,18 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.70"
          />
+
+    <EditText
+        android:id="@+id/placeToLog"
+        android:layout_width="127dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

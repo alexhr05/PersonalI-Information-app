@@ -8,121 +8,121 @@
 
     <TextView
         android:id="@+id/txtError"
-        android:layout_width="357dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="564dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="9dp"
-        android:text=""
+        android:layout_width="@dimen/_240sdp"
+        android:layout_height="wrap_content"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSaveInformation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.452" />
 
     <TextView
         android:id="@+id/txtTitle"
-        android:layout_width="332dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="@dimen/_260sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:text="Добавяне на нова информация"
         android:textColor="@color/black"
-        android:textSize="22sp"
+        android:textSize="@dimen/_17sdp"
         app:layout_constraintBottom_toTopOf="@+id/txtWebsite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292" />
+        app:layout_constraintVertical_bias="0.18" />
 
     <EditText
         android:id="@+id/edTxtWebsite"
-        android:layout_width="336dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="84dp"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Ex: Google/ https://www.deepl.com/ и други"
         android:inputType="textPersonName"
-        android:textSize="17dp"
-        app:layout_constraintBottom_toTopOf="@+id/edTxtEmailUsername"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@+id/txtWebsite" />
 
     <TextView
         android:id="@+id/txtWebsite"
-        android:layout_width="364dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="152dp"
+        android:layout_width="@dimen/_274sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:text="Въведете име на websit или URL линк:"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="@dimen/_15sdp"
         app:layout_constraintBottom_toTopOf="@+id/edTxtWebsite"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/edTxtEmailUsername"
-        android:layout_width="278dp"
-        android:layout_height="44dp"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Ex: qwerty@gmail.com/ velikstar и други"
         android:inputType="textPersonName"
-        android:textSize="17dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="343dp" />
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintBottom_toTopOf="@+id/txtPassword"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailUsername" />
 
     <TextView
         android:id="@+id/txtEmailUsername"
-        android:layout_width="301dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="88dp"
+        android:layout_width="@dimen/_222sdp"
+        android:layout_height="wrap_content"
         android:text="Въведете email или username :"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="@dimen/_15sdp"
         app:layout_constraintBottom_toTopOf="@+id/edTxtEmailUsername"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edTxtWebsite"
-        app:layout_constraintVertical_bias="0.673" />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:layout_constraintVertical_bias="0.666" />
 
     <TextView
         android:id="@+id/txtPassword"
-        android:layout_width="360dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
         android:text="Въведете паролата Ви за това място:"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtError"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edTxtEmailUsername"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart" />
 
     <EditText
         android:id="@+id/edTxtPassword"
-        android:layout_width="272dp"
-        android:layout_height="44dp"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Ex: Qwery123/ pOiuyt321 и други"
         android:inputType="textPersonName"
-        android:textSize="17dp"
+        android:textSize="@dimen/_13sdp"
         app:layout_constraintBottom_toTopOf="@+id/txtError"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassword"
-        app:layout_constraintVertical_bias="0.377" />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.117" />
 
     <Button
         android:id="@+id/btnSaveInformation"
-        android:layout_width="185dp"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_132sdp"
+        android:layout_height="@dimen/_35sdp"
         android:layout_marginTop="9dp"
         android:layout_marginBottom="52dp"
         android:background="@drawable/buttonshape"
@@ -132,10 +132,39 @@
         android:shadowRadius="6"
         android:text="Добави"
         android:textColor="#FFFFFF"
-        android:textSize="23sp"
+        android:textSize="@dimen/_17sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
         app:layout_constraintTop_toBottomOf="@+id/txtError" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.275" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
