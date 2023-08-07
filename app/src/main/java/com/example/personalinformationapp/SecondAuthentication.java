@@ -12,11 +12,6 @@ public class SecondAuthentication {
         return this.pin;
     }
 
-
-    public SecondAuthentication(int pin){
-        setPin(pin);
-    }
-
     public boolean checkPin(int pin){
 
         if(getPin() == pin){

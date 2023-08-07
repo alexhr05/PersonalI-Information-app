@@ -101,6 +101,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.015" />
 
+    <TextView
+        android:id="@+id/txtTitleForLogin"
+        android:layout_width="@dimen/_144sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:gravity="center"
+        android:text="LOG IN"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontalAlign"
+        app:layout_constraintEnd_toEndOf="@id/guidelinePINFIELD2"
+        app:layout_constraintHorizontal_bias="0.315"
+        app:layout_constraintStart_toStartOf="@id/guidelinePINFIELD1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.228" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelinePINFIELD1"
         android:layout_width="wrap_content"

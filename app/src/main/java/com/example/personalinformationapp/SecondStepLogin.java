@@ -23,7 +23,7 @@ public class SecondStepLogin extends AppCompatActivity {
     Button btnActivateFingerprint, btnContinueToLogin;
     BiometricPrompt biometricPrompt;
     BiometricPrompt.PromptInfo promptInfo;
-    boolean logWithBiometric;
+    boolean logWithBiometric, logWithPIN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class SecondStepLogin extends AppCompatActivity {
         btnActivateFingerprint = findViewById(R.id.btnActivateFingerprint);
         btnContinueToLogin = findViewById(R.id.btnContinueToLogin);
         logWithBiometric = false;
+        logWithPIN = true;
 
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
@@ -108,6 +109,7 @@ public class SecondStepLogin extends AppCompatActivity {
                         FileOutputStream file = new FileOutputStream(myExternalFile,true);
 
                         file.write((""+logWithBiometric).getBytes());
+                        file.write(("\n"+logWithPIN).getBytes());
                         file.close();
                     } catch (IOException e) {
                         e.printStackTrace();

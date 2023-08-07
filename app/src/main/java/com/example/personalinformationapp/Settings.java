@@ -89,9 +89,11 @@ public class Settings extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         seperateInfoFromFile = fingerprintStatement.split(" ");
+
         btnSwitchFingerprint.setChecked(Boolean.parseBoolean(seperateInfoFromFile[1]));
-        
+        btnSwitchPin.setChecked(Boolean.parseBoolean(seperateInfoFromFile[2]));
         // lambda function
         txtHelp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,6 +168,46 @@ public class Settings extends AppCompatActivity {
                 }
             }
         });
+        btnSwitchPin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isCHeckedPin) {
+                if (isExternalStorageWritable()) {
+                    try {
+                        String filename = "Settings.txt";
+                        String filepath = "MyDirs";
+                        File myExternalFile = new File(getExternalFilesDir(filepath), filename);
+
+                        BufferedReader reader = new BufferedReader(new FileReader(myExternalFile));
+                        StringBuilder content = new StringBuilder();
+                        String line;
+                        int lineToModify = 3; // The line number to modify
+
+                        int currentLine = 1;
+                        while ((line = reader.readLine()) != null) {
+                            if (currentLine == lineToModify) {
+                                // Modify the desired line
+                                line = "" + isCHeckedPin;
+                            }
+                            content.append(line).append(System.lineSeparator());
+                            currentLine++;
+                        }
+                        reader.close();
+
+                        // Write the modified content back to the file
+                        BufferedWriter writer = new BufferedWriter(new FileWriter(myExternalFile));
+                        writer.write(content.toString());
+                        writer.close();
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        });
+
 
     }
 

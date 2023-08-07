@@ -24,6 +24,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.Executor;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,15 +35,16 @@ public class MainActivity extends AppCompatActivity {
     BiometricPrompt.PromptInfo promptInfo;
     ConstraintLayout constraintLayout;
     EditText pinStandard;
-    TextView textViewAttempt, txtTitleForPIN;
+    TextView textViewAttempt, txtTitleForPIN, txtTitleForLogin;
     Button btnLogin, btnShowFingerPrint;
     String pinString;
     int pin;
     int attempts;
-    boolean logInBiometric;
+    boolean logInBiometric, logInPIN;
     private BiometricManager biometricManager;
     String decryptedPin;
     SecondAuthentication obj;
+
 
     // PIS - Pesonal Information Stuff
 
@@ -52,11 +56,13 @@ public class MainActivity extends AppCompatActivity {
         pinStandard =  (EditText) findViewById(R.id.editTextPin);
         textViewAttempt = findViewById(R.id.textViewAttempt);
         txtTitleForPIN = findViewById(R.id.txtTitleForPIN);
+        txtTitleForLogin = findViewById(R.id.txtTitleForLogin);
 
         btnLogin = findViewById(R.id.btnEnter);
         btnShowFingerPrint = findViewById(R.id.btnShowFingerPrint);
         attempts = 5;
         logInBiometric = false;
+        logInPIN = false;
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyAppPreferences", MODE_PRIVATE);
 
@@ -92,15 +98,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, FirstLoginLogic.class);
             startActivity(intent);
 
-           //  textViewAttempt.setText("firstTime");
+             textViewAttempt.setText("firstTime");
 
         } else {
-
-            // textViewAttempt.setText("Брой опити : "+attempts);
+             textViewAttempt.setText("Брой опити : "+attempts);
             // The app has been launched before
         }
-
-
 
 
 
@@ -114,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             textViewAttempt.setTextColor(ContextCompat.getColor(this, R.color.white));
             pinStandard.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtTitleForPIN.setTextColor(ContextCompat.getColor(this, R.color.white));
-
+            txtTitleForLogin.setTextColor(ContextCompat.getColor(this, R.color.white));
 
 
         } else {
@@ -171,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         String filepath = "MyDirs";
         File file = new File(getExternalFilesDir(filepath), "Settings.txt");
         String decryptedPin;
-        obj = new SecondAuthentication(1234);
+        obj = new SecondAuthentication();
         try {
             // Read the contents of the file
             InputStream inputStream = new FileInputStream(file);
@@ -179,25 +182,27 @@ public class MainActivity extends AppCompatActivity {
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
             String line;
+            List<String> booleanValues = new ArrayList<String>();
+
 
             while ((line = bufferedReader.readLine()) != null) {
-                
                 if(!line.isEmpty()) {
-                    if(line.equals("true")){
-                        biometricPrompt.authenticate(promptInfo);
-                    }else if(line.equals("false")){
-                        logInBiometric = true;
-                    }else{
-                        String password = "YourPassword";
-                        EncryptionUtils object = new EncryptionUtils();
-                        decryptedPin = object.decrypt(password, line);
-
-                        obj.setPin(Integer.parseInt(decryptedPin));
-                    }
-
+                    booleanValues.add(line);
                 }
+            }
 
+            if(booleanValues.get(LineInSettingsFile.useFingerprintLine.ordinal()).equals("true")){
+                biometricPrompt.authenticate(promptInfo);
+            }else if(booleanValues.get(LineInSettingsFile.useFingerprintLine.ordinal()).equals("false")){
+                logInBiometric = true;
+            }else if(booleanValues.get(LineInSettingsFile.pinLine.ordinal()).equals("false")) {
+                logInPIN = true;
+            }else{
+                    String password = "YourPassword";
+                    EncryptionUtils object = new EncryptionUtils();
+                    decryptedPin = object.decrypt(password, line);
 
+                    obj.setPin(Integer.parseInt(decryptedPin));
             }
 
             bufferedReader.close();
@@ -228,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
                         pin = Integer.parseInt(pinString);
                     }
 
-                    if(obj.checkPin(pin)){
+                    if(obj.checkPin(pin) || logInPIN == true){
                         Intent intent = new Intent(MainActivity.this, StorageInfo.class);
                         startActivity(intent);
                     }else{

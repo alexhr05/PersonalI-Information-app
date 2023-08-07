@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,8 @@ import java.io.IOException;
 public class FirstLoginLogic extends AppCompatActivity {
     Button btnContinueSecondStep;
     EditText edTextPin, edTextRepeatPin;
+
+    TextView txtTitle, txtPIN, txtPINRepeat;
     String pinField, repeatPinField;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +37,14 @@ public class FirstLoginLogic extends AppCompatActivity {
 
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
             Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
+            txtTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
+            txtPIN.setTextColor(ContextCompat.getColor(this, R.color.white));
+            txtPINRepeat.setTextColor(ContextCompat.getColor(this, R.color.white));
+            edTextPin.setTextColor(ContextCompat.getColor(this, R.color.white));
+            edTextRepeatPin.setTextColor(ContextCompat.getColor(this, R.color.white));
 
             btnContinueSecondStep.setTextColor(ContextCompat.getColor(this, R.color.white));
+
 
         } else {
             Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
@@ -85,3 +94,4 @@ public class FirstLoginLogic extends AppCompatActivity {
     }
 
 }
+

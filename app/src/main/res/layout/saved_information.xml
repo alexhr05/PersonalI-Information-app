@@ -14,7 +14,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginEnd="4dp"
         android:background="@drawable/buttonshape"
         android:shadowColor="#000000"
         android:shadowDx="3"
@@ -22,13 +21,29 @@
         android:shadowRadius="6"
         android:text="+"
         android:textColor="#FFFFFF"
-        android:textSize="@dimen/_16sdp"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horizontalLine2"
+        app:layout_constraintVertical_bias="0.59" />
+
+    <TextView
+        android:id="@+id/txtPasswordTitle"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:text="Password"
+        android:textSize="@dimen/_14sdp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
-        app:layout_constraintStart_toEndOf="@+id/txtPasswordTitle"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toEndOf="@+id/txtUserNameTitle"
         app:layout_constraintTop_toTopOf="@+id/horizontalLine1"
-        app:layout_constraintVertical_bias="0.849" />
+        app:layout_constraintVertical_bias="0.607" />
 
     <Button
         android:id="@+id/btnSettings"
@@ -38,36 +53,18 @@
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="4dp"
         android:background="@drawable/settings"
         android:shadowColor="#000000"
         android:shadowDx="3"
         android:shadowDy="7"
         android:shadowRadius="6"
         android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnAddNewInformation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toEndOf="@+id/txtPasswordTitle"
-        app:layout_constraintTop_toTopOf="@+id/horizontalLine1"
-        app:layout_constraintVertical_bias="0.882" />
-
-    <TextView
-        android:id="@+id/txtWebsiteTitle"
-        android:layout_width="@dimen/_52sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:text="Website"
-        android:textSize="@dimen/_14sdp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685" />
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toEndOf="@+id/txtPasswordTitle"
+        app:layout_constraintTop_toTopOf="@+id/horizontalLine1"
+        app:layout_constraintVertical_bias="0.563" />
 
     <TextView
         android:id="@+id/txtUserNameTitle"
@@ -84,36 +81,36 @@
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toEndOf="@+id/txtWebsiteTitle"
         app:layout_constraintTop_toTopOf="@+id/horizontalLine1"
-        app:layout_constraintVertical_bias="0.654" />
+        app:layout_constraintVertical_bias="0.607" />
 
     <TextView
-        android:id="@+id/txtPasswordTitle"
-        android:layout_width="@dimen/_70sdp"
+        android:id="@+id/txtWebsiteTitle"
+        android:layout_width="@dimen/_52sdp"
         android:layout_height="@dimen/_20sdp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:text="Password"
+        android:text="Website"
         android:textSize="@dimen/_14sdp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintStart_toEndOf="@+id/txtUserNameTitle"
-        app:layout_constraintTop_toTopOf="@+id/horizontalLine1"
-        app:layout_constraintVertical_bias="0.654" />
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.646" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/item_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="408dp"
+        android:layout_height="192dp"
 
         android:layout_marginEnd="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/horizontalLine"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.003" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontalLine1"
@@ -123,10 +120,17 @@
         app:layout_constraintGuide_percent="0.01" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.83" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/horizontalLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.16" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

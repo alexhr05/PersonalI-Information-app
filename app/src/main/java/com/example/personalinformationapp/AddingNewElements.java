@@ -136,6 +136,7 @@ public class AddingNewElements extends AppCompatActivity {
             placeToLog.setText(placeToLogToCheck);
             emailUsername.setText(usernameToCheck);
             password.setText(passwordToCheck);
+
             txtTitle = findViewById(R.id.txtTitle);
             txtWebsite = findViewById(R.id.txtWebsite);
             txtEmailUsername = findViewById(R.id.txtEmailUsername);
@@ -169,7 +170,6 @@ public class AddingNewElements extends AppCompatActivity {
                         // Create a File object representing the specific file
                         File myExternalFile = new File(getExternalFilesDir(filepath), filename);
                         if(isExternalStorageWritable()){
-
 
                             //  Read the contents of the file
                             List<String> lines = new ArrayList<>();
