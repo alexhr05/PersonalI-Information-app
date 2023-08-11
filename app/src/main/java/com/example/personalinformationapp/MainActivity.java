@@ -8,6 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -44,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private BiometricManager biometricManager;
     String decryptedPin;
     SecondAuthentication obj;
-
-
+    List<String> booleanValues;
     // PIS - Pesonal Information Stuff
 
     @Override
@@ -62,13 +62,22 @@ public class MainActivity extends AppCompatActivity {
         btnShowFingerPrint = findViewById(R.id.btnShowFingerPrint);
         attempts = 5;
         logInBiometric = false;
-        logInPIN = false;
-
+        logInPIN = true;
+        booleanValues = new ArrayList<String>();
         SharedPreferences sharedPreferences = getSharedPreferences("MyAppPreferences", MODE_PRIVATE);
 
         // Check if the "firstTime" flag is set to true
         boolean isFirstTime = sharedPreferences.getBoolean("firstTime", true);
+        /*SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("firstTime", true);
+        editor.apply();*/
 
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
+        intentFilter.addDataScheme("package");
+
+
+        Toast.makeText(this, "isFirstTime="+isFirstTime, Toast.LENGTH_SHORT).show();
         if (isFirstTime) {
             // This is the first time the app is being launched
             try {
@@ -82,16 +91,16 @@ public class MainActivity extends AppCompatActivity {
 
 
                 fileInformation.write("".getBytes());
-                fileInformation.close();
                 fileSettings.write("".getBytes());
+                fileInformation.close();
                 fileSettings.close();
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             SharedPreferences.Editor editor = sharedPreferences.edit();
+            // Put the flag firstTime to true to be next time to go through Set up PIN
             editor.putBoolean("firstTime", false);
             editor.apply();
 
@@ -155,6 +164,10 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
                 Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+                if(booleanValues.get(LineInSettingsFile.usePinLine.ordinal()).equals("false")){
+                    Intent intent = new Intent(MainActivity.this, StorageInfo.class);
+                    startActivity(intent);
+                }
                 logInBiometric = true;
             }
 
@@ -182,7 +195,6 @@ public class MainActivity extends AppCompatActivity {
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
             String line;
-            List<String> booleanValues = new ArrayList<String>();
 
 
             while ((line = bufferedReader.readLine()) != null) {
@@ -191,19 +203,24 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
+            String password = "YourPassword";
+            EncryptionUtils object = new EncryptionUtils();
+            decryptedPin = object.decrypt(password, booleanValues.get(LineInSettingsFile.pinLine.ordinal()));
+
+            obj.setPin(Integer.parseInt(decryptedPin));
+//            Toast.makeText(this, "booleanValuesList="+booleanValues.get(LineInSettingsFile.usePinLine.ordinal()), Toast.LENGTH_SHORT).show();
             if(booleanValues.get(LineInSettingsFile.useFingerprintLine.ordinal()).equals("true")){
                 biometricPrompt.authenticate(promptInfo);
             }else if(booleanValues.get(LineInSettingsFile.useFingerprintLine.ordinal()).equals("false")){
                 logInBiometric = true;
-            }else if(booleanValues.get(LineInSettingsFile.pinLine.ordinal()).equals("false")) {
-                logInPIN = true;
-            }else{
-                    String password = "YourPassword";
-                    EncryptionUtils object = new EncryptionUtils();
-                    decryptedPin = object.decrypt(password, line);
-
-                    obj.setPin(Integer.parseInt(decryptedPin));
             }
+
+            // Mark with true/false flag the using of PIN
+/*            if(booleanValues.get(LineInSettingsFile.usePinLine.ordinal()).equals("true")){
+                logInPIN = true;
+            }else if(booleanValues.get(LineInSettingsFile.usePinLine.ordinal()).equals("false")){
+                logInPIN = true;
+            }*/
 
             bufferedReader.close();
         } catch (IOException e) {
@@ -216,7 +233,8 @@ public class MainActivity extends AppCompatActivity {
         btnShowFingerPrint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                biometricPrompt.authenticate(promptInfo);
+                //biometricPrompt.authenticate(promptInfo);
+
             }
         });
 

@@ -1,5 +1,6 @@
 package com.example.personalinformationapp;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Environment;
@@ -17,10 +18,13 @@ import org.w3c.dom.Text;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -81,10 +85,11 @@ public class ChangePinPage extends AppCompatActivity {
                             String filename = "Settings.txt";
                             String filepath = "MyDirs";
                             File myExternalFile = new File(getExternalFilesDir(filepath), filename);
-
-                            BufferedReader reader = new BufferedReader(new FileReader(myExternalFile));
+                            InputStream inputStream = new FileInputStream(myExternalFile);
+                            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                             String line = "";
-                            while ((line = reader.readLine()) != null) {
+                            while ((line = bufferedReader.readLine()) != null) {
                                 allSettingsInfo.add(line);
                             }
 
@@ -100,7 +105,7 @@ public class ChangePinPage extends AppCompatActivity {
                                 line = "";
                                 int lineToModify = 1; // The line number to modify
                                 int currentLine = 1;
-                                while ((line = reader.readLine()) != null) {
+                                while ((line = bufferedReader.readLine()) != null) {
                                     if (currentLine == lineToModify) {
                                         // Modify the desired line
                                         line = "" + encryptedData;
@@ -110,12 +115,14 @@ public class ChangePinPage extends AppCompatActivity {
                                 }
                                 writer.write(content.toString());
                                 writer.close();
+
+                                Intent intent = new Intent(ChangePinPage.this, Settings.class);
+                                startActivity(intent);
                             }else{
                                 txtError.setText("Не сте въвели правилно стария си ПИН!");
                             }
 
-                            reader.close();
-
+                            bufferedReader.close();
 
                         } catch (IOException e) {
                             e.printStackTrace();

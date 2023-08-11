@@ -28,9 +28,14 @@ public class FirstLoginLogic extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_time_log);
-        btnContinueSecondStep = findViewById(R.id.btnContinueSecondStep);
+        txtTitle = findViewById(R.id.txtTitle);
+        txtPIN = findViewById(R.id.txtPIN);
+        txtPINRepeat = findViewById(R.id.txtPINRepeat);
+
         edTextPin = findViewById(R.id.edTextPin);
         edTextRepeatPin = findViewById(R.id.edTextRepeatPin);
+
+        btnContinueSecondStep = findViewById(R.id.btnContinueSecondStep);
 
 
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
@@ -40,6 +45,7 @@ public class FirstLoginLogic extends AppCompatActivity {
             txtTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtPIN.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtPINRepeat.setTextColor(ContextCompat.getColor(this, R.color.white));
+
             edTextPin.setTextColor(ContextCompat.getColor(this, R.color.white));
             edTextRepeatPin.setTextColor(ContextCompat.getColor(this, R.color.white));
 

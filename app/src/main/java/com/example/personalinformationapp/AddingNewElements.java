@@ -92,11 +92,12 @@ public class AddingNewElements extends AppCompatActivity {
                                 String data = txtPlaceToLog+";"+txtEmailUsername+";"+txtpassword;
                                 EncryptionUtils obj = new EncryptionUtils();
                                 String encryptedData = obj.encrypt(password, data);
-                                Log.d("Encryption", "Encrypted Data: " + encryptedData);
+                                String encodedStringWithoutNewlines = encryptedData.replace("\n", "").replace("\r", "");
+                                Log.d("Encryption", "'Encrypted Data: " + encodedStringWithoutNewlines +"'");
 
-                                //Log.d("Decryption", "Decrypted Data: " + decryptedData);
+                               // Log.d("Decryption", "Decrypted Data: " + decryptedData);
 
-                                file.write(encryptedData.getBytes());
+                                file.write((encodedStringWithoutNewlines+"\n").getBytes());
                                 file.close();
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -193,16 +194,18 @@ public class AddingNewElements extends AppCompatActivity {
                             String updatedRow = txtPlaceToLog+";"+txtEmailUsername+";"+txtpassword;
                             // Encrypt the data
                             String encryptedData = "";
+                            String encodedStringWithoutNewlines = "";
                             try {
                                 String password = "YourPassword";
                                 String data = updatedRow;
                                 EncryptionUtils obj = new EncryptionUtils();
                                 encryptedData = obj.encrypt(password, data);
+                                encodedStringWithoutNewlines = encryptedData.replace("\n", "").replace("\r", "");
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
                             if (positionElementToCheck >= 0 && positionElementToCheck < lines.size()) {
-                                lines.set(positionElementToCheck, encryptedData);
+                                lines.set(positionElementToCheck, encodedStringWithoutNewlines);
                             }
 
                             // Write the modified content back to the file

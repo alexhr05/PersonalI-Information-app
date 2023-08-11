@@ -62,7 +62,8 @@ public class StorageInfo extends AppCompatActivity {
             InputStream inputStream = new FileInputStream(file);
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
+            //Toast.makeText(this, "Отваря файл Infromation.txt", Toast.LENGTH_SHORT).show();
+            Log.d("ОТваря","Infromation.txt");
             String line;
 
             while ((line = bufferedReader.readLine()) != null) {
@@ -82,10 +83,11 @@ public class StorageInfo extends AppCompatActivity {
                     items.add(new Item(rowInfo[0],rowInfo[1],rowInfo[2]));
 
                 }
-
             }
 
             bufferedReader.close();
+            Log.d("Zatvarqne","Infromation.txt");
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -120,8 +122,16 @@ public class StorageInfo extends AppCompatActivity {
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String filenameInformation = "Information.txt";
+                String filenameSettings = "Settings.txt";
+                String filepath = "MyDirs";
+                File informationTxtFile = new File(getExternalFilesDir(filepath), filenameInformation);
+                File settingsTxtFile = new File(getExternalFilesDir(filepath), filenameInformation);
+                informationTxtFile.delete();
+                settingsTxtFile.delete();
                 Intent intent = new Intent(StorageInfo.this, Settings.class);
                 startActivity(intent);
+
             }
         });
     }
