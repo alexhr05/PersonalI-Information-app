@@ -1,0 +1,122 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.stopcallsmessagesemails"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="28"
+8-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+11-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:4:5-74
+11-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:4:22-72
+12    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+12-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:5:5-76
+12-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:5:22-74
+13    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+13-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:6:5-76
+13-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:6:22-74
+14    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+14-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:7:5-8:47
+14-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:7:22-74
+15
+16    <permission
+16-->[androidx.core:core:1.9.0] C:\Users\Peter\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+17        android:name="com.example.stopcallsmessagesemails.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+17-->[androidx.core:core:1.9.0] C:\Users\Peter\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+18        android:protectionLevel="signature" />
+18-->[androidx.core:core:1.9.0] C:\Users\Peter\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+19
+20    <uses-permission android:name="com.example.stopcallsmessagesemails.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+20-->[androidx.core:core:1.9.0] C:\Users\Peter\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+20-->[androidx.core:core:1.9.0] C:\Users\Peter\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+21
+22    <application
+22-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:11:5-41:19
+23        android:allowBackup="true"
+23-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:12:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.9.0] C:\Users\Peter\.gradle\caches\transforms-3\9811bf6e0ea8002748e1a5d1e9eb40bd\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+25        android:dataExtractionRules="@xml/data_extraction_rules"
+25-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:13:9-65
+26        android:debuggable="true"
+27        android:extractNativeLibs="false"
+28        android:fullBackupContent="@xml/backup_rules"
+28-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:14:9-54
+29        android:icon="@mipmap/ic_launcher"
+29-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:15:9-43
+30        android:label="@string/app_name"
+30-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:16:9-41
+31        android:roundIcon="@mipmap/ic_launcher_round"
+31-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:17:9-54
+32        android:supportsRtl="true"
+32-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:18:9-35
+33        android:testOnly="true"
+34        android:theme="@style/Theme.StopCallsMessagesEmails" >
+34-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:19:9-61
+35        <receiver
+35-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:21:9-26:20
+36            android:name="com.example.stopcallsmessagesemails.CallReceiver"
+36-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:21:19-47
+37            android:exported="true" >
+37-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:22:13-36
+38            <intent-filter>
+38-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:23:13-25:29
+39                <action android:name="android.intent.action.PHONE_STATE" />
+39-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:24:17-76
+39-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:24:25-73
+40            </intent-filter>
+41        </receiver>
+42
+43        <activity
+43-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:28:9-40:20
+44            android:name="com.example.stopcallsmessagesemails.MainActivity"
+44-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:29:13-41
+45            android:exported="true" >
+45-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:30:13-36
+46            <intent-filter>
+46-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:31:13-35:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:32:17-69
+47-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:32:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:34:17-77
+49-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:34:27-74
+50            </intent-filter>
+51
+52            <meta-data
+52-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:37:13-39:36
+53                android:name="android.app.lib_name"
+53-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:38:17-52
+54                android:value="" />
+54-->C:\Android_studio\stopCallsMessagesEmails\app\src\main\AndroidManifest.xml:39:17-33
+55        </activity>
+56
+57        <provider
+57-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Peter\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+58            android:name="androidx.startup.InitializationProvider"
+58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Peter\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+59            android:authorities="com.example.stopcallsmessagesemails.androidx-startup"
+59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Peter\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+60            android:exported="false" >
+60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Peter\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+61            <meta-data
+61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Peter\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+62                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Peter\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+63                android:value="androidx.startup" />
+63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Peter\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+64            <meta-data
+64-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Peter\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+65                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+65-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Peter\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+66                android:value="androidx.startup" />
+66-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Peter\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+67        </provider>
+68    </application>
+69
+70</manifest>
