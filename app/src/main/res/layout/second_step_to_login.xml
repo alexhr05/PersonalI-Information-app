@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineStartTopSecondStepLogin"
@@ -35,22 +35,22 @@
 
     <Button
         android:id="@+id/btnContinueToLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="196dp"
+        android:layout_width="@dimen/_245sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginBottom="32dp"
         android:text="Continue to Login"
         android:textSize="@dimen/_16sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndSecondStepLogin"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSecondStepLogin"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.725" />
+        app:layout_constraintVertical_bias="0.464" />
 
     <Button
         android:id="@+id/btnActivateFingerprint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_245sdp"
+        android:layout_height="@dimen/_40sdp"
         android:text="Activate Fingerprint"
         android:textSize="@dimen/_16sdp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineEndBottomSecondStepLogin"
@@ -62,41 +62,40 @@
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_256sdp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="45dp"
         android:text="Second Step To Login"
         android:textSize="@dimen/_26sdp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineStartTopSecondStepLogin"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndSecondStepLogin"
-        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSecondStepLogin"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="@dimen/_245sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_60sdp"
         android:text="But if you haven't fingerprint or you don't want ot use, click button 'Continue to Login'"
         android:textSize="@dimen/_16sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndSecondStepLogin"
-        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSecondStepLogin"
         app:layout_constraintTop_toTopOf="@+id/guidelineEndBottomSecondStepLogin"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintVertical_bias="0.152" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="@dimen/_245sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_44sdp"
         android:layout_marginTop="28dp"
         android:text="Here if you want to use fingerprint to log in app, click the button.      "
         android:textSize="@dimen/_16sdp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineEndBottomSecondStepLogin"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndSecondStepLogin"
-        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSecondStepLogin"
         app:layout_constraintTop_toTopOf="@+id/guidelineStartTopSecondStepLogin"
         app:layout_constraintVertical_bias="0.0" />

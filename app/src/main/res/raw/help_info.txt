@@ -1,5 +1,7 @@
-				PIS е приложение за пазене на лична информация като влизане в определени сайтове и приложения.
+							A PIS is an application for storing personal information, for example for logging into certain websites and applications.
 				
-				В мобилното приложение човек може да прегледа място, на което се е регистрирал, username или email и паролата за мястото. Като потребителя може да редактира наличната информация и да ще му се промени след като запази промените. Друга функция, която може да прави потребителя е да изтрива реда или информацията за определен място, в което се е регистрирал.
+							In the mobile app, the person can see the place where they have registered, the username or email and the password for the place. As the user can edit the available information and it will change after saving the changes. Another function that the user can do is to delete the line or information for a place that they have registered at.
 				
-				Целия поток от данни е криптиран на сигурно място на телефона и никой не може да го достъпи или разгадае. Данните на потребителя с в безопасност и няма нужда от притеснения.
+							In the Settings section, you can change your pin, and you can also choose how you can log into the app with a pin code or with a fingerprint, or all together or you can and without any of all.
+				
+							The entire data stream is encrypted in a secure location on the phone and no one can access or decrypt it. The user's data is safe and there is no need to worry.

@@ -25,14 +25,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_percent="0.8" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineStartTopAboutAuthor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.13" />
+        app:layout_constraintGuide_percent="0.14" />
 
     <TextView
         android:id="@+id/txtBack"
@@ -68,7 +68,7 @@
 
     <TextView
         android:id="@+id/txtTitle"
-        android:layout_width="@dimen/_160sdp"
+        android:layout_width="@dimen/_170sdp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -95,7 +95,7 @@
         android:paddingEnd="12dp"
         android:paddingBottom="8dp"
         android:text="Info For Text"
-        android:textSize="@dimen/_18sdp"
+        android:textSize="@dimen/_13sdp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineEndBottomAboutAuthor"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndAboutAuthor"
         app:layout_constraintHorizontal_bias="0.428"

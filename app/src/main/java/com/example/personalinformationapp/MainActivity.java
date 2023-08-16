@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
     String pinString;
     int pin;
     int attempts;
-    boolean logInBiometric, logInPIN;
     private BiometricManager biometricManager;
-    String decryptedPin;
+    String decryptedPin, logInPin, logInBiometric;
     SecondAuthentication obj;
     List<String> booleanValues;
+    boolean isFingerprintAuthenticationSuccessful;
     // PIS - Pesonal Information Stuff
 
     @Override
@@ -61,16 +61,14 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnEnter);
         btnShowFingerPrint = findViewById(R.id.btnShowFingerPrint);
         attempts = 5;
-        logInBiometric = false;
-        logInPIN = true;
+        logInPin = "";
+        logInBiometric = "";
         booleanValues = new ArrayList<String>();
         SharedPreferences sharedPreferences = getSharedPreferences("MyAppPreferences", MODE_PRIVATE);
 
         // Check if the "firstTime" flag is set to true
         boolean isFirstTime = sharedPreferences.getBoolean("firstTime", true);
-        /*SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean("firstTime", true);
-        editor.apply();*/
+        isFingerprintAuthenticationSuccessful = false;
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
@@ -107,10 +105,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, FirstLoginLogic.class);
             startActivity(intent);
 
-             textViewAttempt.setText("firstTime");
-
         } else {
-             textViewAttempt.setText("Брой опити : "+attempts);
             // The app has been launched before
         }
 
@@ -127,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
             pinStandard.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtTitleForPIN.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtTitleForLogin.setTextColor(ContextCompat.getColor(this, R.color.white));
-
 
         } else {
             Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
@@ -164,11 +158,12 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
                 Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
-                if(booleanValues.get(LineInSettingsFile.usePinLine.ordinal()).equals("false")){
+                if(logInBiometric.equals("true") && logInPin.equals("true")){
+                    isFingerprintAuthenticationSuccessful = true;
+                }else if(logInBiometric.equals("true") && logInPin.equals("false")){
                     Intent intent = new Intent(MainActivity.this, StorageInfo.class);
                     startActivity(intent);
                 }
-                logInBiometric = true;
             }
 
             @Override
@@ -208,19 +203,36 @@ public class MainActivity extends AppCompatActivity {
             decryptedPin = object.decrypt(password, booleanValues.get(LineInSettingsFile.pinLine.ordinal()));
 
             obj.setPin(Integer.parseInt(decryptedPin));
-//            Toast.makeText(this, "booleanValuesList="+booleanValues.get(LineInSettingsFile.usePinLine.ordinal()), Toast.LENGTH_SHORT).show();
-            if(booleanValues.get(LineInSettingsFile.useFingerprintLine.ordinal()).equals("true")){
-                biometricPrompt.authenticate(promptInfo);
-            }else if(booleanValues.get(LineInSettingsFile.useFingerprintLine.ordinal()).equals("false")){
-                logInBiometric = true;
-            }
+
+            // Mark with true/false flag the using of Fingerprint
+            logInBiometric = booleanValues.get(LineInSettingsFile.useFingerprintLine.ordinal());
 
             // Mark with true/false flag the using of PIN
-/*            if(booleanValues.get(LineInSettingsFile.usePinLine.ordinal()).equals("true")){
-                logInPIN = true;
-            }else if(booleanValues.get(LineInSettingsFile.usePinLine.ordinal()).equals("false")){
-                logInPIN = true;
-            }*/
+            logInPin = booleanValues.get(LineInSettingsFile.usePinLine.ordinal());
+
+
+            if(logInBiometric.equals("true") && logInPin.equals("false")){
+                btnLogin.setVisibility(View.GONE);
+                textViewAttempt.setVisibility(View.GONE);
+                pinStandard.setVisibility(View.GONE);
+                txtTitleForPIN.setVisibility(View.GONE);
+
+            }else if(logInBiometric.equals("false") && logInPin.equals("true")){
+                btnShowFingerPrint.setVisibility(View.GONE);
+
+            }else if(logInBiometric.equals("false") && logInPin.equals("false")){
+                btnShowFingerPrint.setVisibility(View.GONE);
+                textViewAttempt.setVisibility(View.GONE);
+                pinStandard.setVisibility(View.GONE);
+                txtTitleForPIN.setVisibility(View.GONE);
+            }
+
+
+            if(logInBiometric.equals("true")){
+                biometricPrompt.authenticate(promptInfo);
+            }
+
+
 
             bufferedReader.close();
         } catch (IOException e) {
@@ -233,8 +245,7 @@ public class MainActivity extends AppCompatActivity {
         btnShowFingerPrint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //biometricPrompt.authenticate(promptInfo);
-
+                biometricPrompt.authenticate(promptInfo);
             }
         });
 
@@ -243,29 +254,18 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(logInBiometric){
-                    pinString = pinStandard.getText().toString();
+                pinString = pinStandard.getText().toString();
+                if(!pinString.isEmpty()){
+                    pin = Integer.parseInt(pinString);
+                }
 
-                    //Log.d("passwordFromLog",""+pin);
-                    if(!pinString.isEmpty()){
-                        pin = Integer.parseInt(pinString);
-                    }
-
-                    if(obj.checkPin(pin) || logInPIN == true){
-                        Intent intent = new Intent(MainActivity.this, StorageInfo.class);
-                        startActivity(intent);
-                    }else{
-                       // textViewAttempt.setText(""+obj.checkPin(pin));
-                        textViewAttempt.setText("Сбъркахте пина си! Имате " + attempts + " оставащи опита.");
-
-                        attempts--;
-
-                        if(attempts < 0 ){
-                            System.exit(0);
-                        }
-                    }
-                }else{
-                    biometricPrompt.authenticate(promptInfo);
+                if(isFingerprintAuthenticationSuccessful && logInPin.equals("true")){
+                    UsingPINWithWithoutBiometric();
+                }else if(logInBiometric.equals("false") && logInPin.equals("true")){
+                    UsingPINWithWithoutBiometric();
+                }else if(logInBiometric.equals("false") && logInPin.equals("false")) {
+                    Intent intent = new Intent(MainActivity.this, StorageInfo.class);
+                    startActivity(intent);
                 }
 
             }
@@ -273,6 +273,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+    public void UsingPINWithWithoutBiometric(){
+        if(obj.checkPin(pin)){
+            Intent intent = new Intent(MainActivity.this, StorageInfo.class);
+            startActivity(intent);
+        }else{
+            // textViewAttempt.setText(""+obj.checkPin(pin));
+            textViewAttempt.setText("Сбъркахте пина си! Имате " + attempts + " оставащи опита.");
+
+            attempts--;
+
+            if(attempts < 0 ){
+                System.exit(0);
+            }
+        }
     }
 
 }

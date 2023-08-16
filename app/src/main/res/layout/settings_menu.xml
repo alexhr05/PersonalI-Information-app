@@ -5,19 +5,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/txtChangePIN"
+        android:layout_width="@dimen/_234sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="32dp"
+        android:text="Change PIN"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toTopOf="@+id/txtHelp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
+        app:layout_constraintTop_toTopOf="@+id/guidelineStartTopSettings"
+        app:layout_constraintVertical_bias="0.397" />
+
+    <TextView
+        android:id="@+id/txtChangePINArrow"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="32dp"
+        android:text=">"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toTopOf="@+id/txtHelpArrow"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
+        app:layout_constraintTop_toTopOf="@+id/guidelineStartTopSettings"
+        app:layout_constraintVertical_bias="0.397" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineEndBottomSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.58" />
+        app:layout_constraintGuide_percent="0.71" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineStartTopSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.29" />
+        app:layout_constraintGuide_percent="0.37" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineStartSettings"
@@ -40,15 +74,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="112dp"
         android:text="Back"
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
         app:layout_constraintTop_toTopOf="@+id/guidelineEndBottomSettings"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.484" />
 
     <TextView
         android:id="@+id/txtBackArrow"
@@ -57,53 +90,51 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="112dp"
         android:text=">"
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
-        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
         app:layout_constraintTop_toTopOf="@+id/guidelineEndBottomSettings"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.48" />
 
     <TextView
         android:id="@+id/txtTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_170sdp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="63dp"
+        android:layout_marginTop="30dp"
         android:text="Settings menu"
         android:textSize="@dimen/_25sdp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineStartTopSettings"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.107" />
 
     <TextView
-        android:id="@+id/txtHelp"
+        android:id="@+id/txtAuthorInfo"
         android:layout_width="@dimen/_234sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_24sdp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="52dp"
-        android:text="Help"
+        android:text="About author"
         android:textSize="@dimen/_18sdp"
-        app:layout_constraintBottom_toTopOf="@+id/txtAuthorInfo"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineEndBottomSettings"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
-        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
         app:layout_constraintTop_toTopOf="@+id/guidelineStartTopSettings"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.938" />
 
     <TextView
         android:id="@+id/txtHelpArrow"
         android:layout_width="@dimen/_45sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_24sdp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
@@ -112,31 +143,32 @@
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toTopOf="@+id/txtAuthorInfoArrow"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
-        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
         app:layout_constraintTop_toTopOf="@+id/guidelineStartTopSettings"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.679" />
 
     <TextView
-        android:id="@+id/txtAuthorInfo"
+        android:id="@+id/txtHelp"
         android:layout_width="@dimen/_234sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_24sdp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:text="About author"
+        android:layout_marginTop="52dp"
+        android:text="Help"
         android:textSize="@dimen/_18sdp"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineEndBottomSettings"
+        app:layout_constraintBottom_toTopOf="@+id/txtAuthorInfo"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
         app:layout_constraintTop_toTopOf="@+id/guidelineStartTopSettings"
-        app:layout_constraintVertical_bias="0.649" />
+        app:layout_constraintVertical_bias="0.679" />
 
     <TextView
         android:id="@+id/txtAuthorInfoArrow"
         android:layout_width="@dimen/_45sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_24sdp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
@@ -144,28 +176,27 @@
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineEndBottomSettings"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
-        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
         app:layout_constraintTop_toTopOf="@+id/guidelineStartTopSettings"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintVertical_bias="0.94" />
 
     <Switch
         android:id="@+id/btnSwitchFingerprint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_172sdp"
+        android:layout_height="@dimen/_25sdp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="192dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="20dp"
         android:text="Use Fingerprint"
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineStartTopSettings"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
-        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.257" />
+        app:layout_constraintVertical_bias="0.842" />
 
     <ImageView
         android:id="@+id/imgViewFingerPrint"
@@ -175,46 +206,45 @@
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="180dp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineStartTopSettings"
         app:layout_constraintEnd_toStartOf="@+id/btnSwitchFingerprint"
-        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewPinIcon"
+        app:layout_constraintVertical_bias="0.4"
+        app:srcCompat="@drawable/fingerprint_black" />
+
+    <Switch
+        android:id="@+id/btnSwitchPin"
+        android:layout_width="@dimen/_172sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="20dp"
+        android:text="Use PIN"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineStartTopSettings"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.423"
-        app:srcCompat="@drawable/fingerprint_black" />
+        app:layout_constraintVertical_bias="0.583" />
 
     <ImageView
         android:id="@+id/imgViewPinIcon"
-        android:layout_width="57dp"
-        android:layout_height="45dp"
+        android:layout_width="@dimen/_46sdp"
+        android:layout_height="@dimen/_40sdp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginStart="20dp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineStartTopSettings"
         app:layout_constraintEnd_toStartOf="@+id/btnSwitchPin"
-        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.621"
+        app:layout_constraintVertical_bias="0.589"
         app:srcCompat="@drawable/pin_icon" />
-
-    <Switch
-        android:id="@+id/btnSwitchPin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginEnd="28dp"
-        android:text="Use PIN"
-        android:textSize="@dimen/_18sdp"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineStartTopSettings"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEndSettings"
-        app:layout_constraintHorizontal_bias="0.59"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStartSettings"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
