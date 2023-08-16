@@ -122,13 +122,6 @@ public class StorageInfo extends AppCompatActivity {
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String filenameInformation = "Information.txt";
-                String filenameSettings = "Settings.txt";
-                String filepath = "MyDirs";
-                File informationTxtFile = new File(getExternalFilesDir(filepath), filenameInformation);
-                File settingsTxtFile = new File(getExternalFilesDir(filepath), filenameInformation);
-                informationTxtFile.delete();
-                settingsTxtFile.delete();
                 Intent intent = new Intent(StorageInfo.this, Settings.class);
                 startActivity(intent);
 

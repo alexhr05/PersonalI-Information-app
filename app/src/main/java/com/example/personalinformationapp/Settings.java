@@ -26,10 +26,10 @@ import java.io.IOException;
 
 public class Settings extends AppCompatActivity {
     private Switch btnSwitchFingerprint, btnSwitchPin;
-    private TextView txtHelp, txtHelpArrow, txtAuthorInfo, txtAuthorInfoArrow, txtBack, txtBackArrow, txtTitle;
+    private TextView txtHelp, txtHelpArrow, txtAuthorInfo, txtAuthorInfoArrow, txtBack, txtBackArrow, txtTitle, txtChangePIN, txtChangePINArrow;
     private String fingerprintStatement;
     private ImageView imgViewFingerPrint, imgViewPin;
-
+    private String[] seperateInfoFromFile;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +48,11 @@ public class Settings extends AppCompatActivity {
         txtBack = findViewById(R.id.txtBack);
         txtBackArrow = findViewById(R.id.txtBackArrow);
 
+        txtChangePIN = findViewById(R.id.txtChangePIN);
+        txtChangePINArrow = findViewById(R.id.txtChangePINArrow);
+
         txtTitle = findViewById(R.id.txtTitle);
-        String[] seperateInfoFromFile;
+
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
@@ -90,7 +93,10 @@ public class Settings extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        seperateInfoFromFile = fingerprintStatement.split(" ");
+        if(fingerprintStatement != null)
+            seperateInfoFromFile = fingerprintStatement.split(" ");
+        else
+            Toast.makeText(this, "Данните не са прочетени от файла с настройки!", Toast.LENGTH_LONG).show();
 
         btnSwitchFingerprint.setChecked(Boolean.parseBoolean(seperateInfoFromFile[1]));
         btnSwitchPin.setChecked(Boolean.parseBoolean(seperateInfoFromFile[2]));
@@ -127,6 +133,15 @@ public class Settings extends AppCompatActivity {
             Intent intent = new Intent(Settings.this, StorageInfo.class);
             startActivity(intent);
         });
+        txtChangePIN.setOnClickListener(view -> {
+            Intent intent = new Intent(Settings.this, ChangePinPage.class);
+            startActivity(intent);
+        });
+        txtChangePINArrow.setOnClickListener(view -> {
+            Intent intent = new Intent(Settings.this, ChangePinPage.class);
+            startActivity(intent);
+        });
+
 
         btnSwitchFingerprint.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

@@ -21,23 +21,23 @@
 
     <TextView
         android:id="@+id/txtTitle"
-        android:layout_width="@dimen/_260sdp"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_26sdp"
         android:layout_marginTop="36dp"
-        android:text="Добавяне на нова информация"
+        android:text="Add new information"
         android:textColor="@color/black"
-        android:textSize="@dimen/_17sdp"
+        android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toTopOf="@+id/txtWebsite"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="@+id/guideLineStart"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintVertical_bias="0.175" />
 
     <EditText
         android:id="@+id/edTxtWebsite"
         android:layout_width="@dimen/_230sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_30sdp"
         android:ems="10"
         android:hint="Ex: Google/ https://www.deepl.com/ и други"
         android:inputType="textPersonName"
@@ -50,15 +50,15 @@
 
     <TextView
         android:id="@+id/txtWebsite"
-        android:layout_width="@dimen/_274sdp"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_18sdp"
         android:layout_marginTop="100dp"
-        android:text="Въведете име на websit или URL линк:"
+        android:text="Enter a website name or URL link :"
         android:textColor="@color/black"
         android:textSize="@dimen/_15sdp"
         app:layout_constraintBottom_toTopOf="@+id/edTxtWebsite"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="@+id/guideLineStart"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -66,7 +66,7 @@
     <EditText
         android:id="@+id/edTxtEmailUsername"
         android:layout_width="@dimen/_230sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_32sdp"
         android:ems="10"
         android:hint="Ex: qwerty@gmail.com/ velikstar и други"
         android:inputType="textPersonName"
@@ -80,8 +80,8 @@
     <TextView
         android:id="@+id/txtEmailUsername"
         android:layout_width="@dimen/_222sdp"
-        android:layout_height="wrap_content"
-        android:text="Въведете email или username :"
+        android:layout_height="@dimen/_20sdp"
+        android:text="Enter email or username :"
         android:textColor="@color/black"
         android:textSize="@dimen/_15sdp"
         app:layout_constraintBottom_toTopOf="@+id/edTxtEmailUsername"
@@ -94,30 +94,32 @@
     <TextView
         android:id="@+id/txtPassword"
         android:layout_width="@dimen/_270sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_20sdp"
         android:layout_marginBottom="36dp"
-        android:text="Въведете паролата Ви за това място:"
+        android:text="Enter your password for this location:"
         android:textColor="@color/black"
         android:textSize="@dimen/_15sdp"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintStart_toStartOf="@+id/guideLineStart" />
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/edTxtPassword"
         android:layout_width="@dimen/_230sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_32sdp"
         android:ems="10"
         android:hint="Ex: Qwery123/ pOiuyt321 и други"
         android:inputType="textPersonName"
         android:textSize="@dimen/_13sdp"
         app:layout_constraintBottom_toTopOf="@+id/txtError"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="@+id/guideLineStart"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
-        app:layout_constraintVertical_bias="0.117" />
+        app:layout_constraintVertical_bias="0.194" />
 
     <Button
         android:id="@+id/btnSaveInformation"
@@ -125,12 +127,11 @@
         android:layout_height="@dimen/_42sdp"
         android:layout_marginTop="9dp"
         android:layout_marginBottom="52dp"
-
         android:shadowColor="#000000"
         android:shadowDx="3"
         android:shadowDy="7"
         android:shadowRadius="6"
-        android:text="Добави"
+        android:text="Save"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/_17sdp"
         app:layout_constraintBottom_toBottomOf="parent"

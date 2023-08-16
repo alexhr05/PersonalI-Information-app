@@ -2,110 +2,155 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
 
-    <TextView
-        android:id="@+id/txtAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Age"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.83" />
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="80dp">
 
-    <TextView
-        android:id="@+id/txtFirstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="First name"
-        android:textColor="#2596be"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <TextView
-        android:id="@+id/txtLastName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Last name"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.235" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onBtnClick"
-        android:text="Button"
-
+        android:id="@+id/btnShowFingerPrint"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="152dp"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="7"
+        android:shadowRadius="6"
+        android:text="Fingerprint"
+        android:textSize="@dimen/_13sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineErrorFieldEND2"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="@+id/guidelineErrorFieldStart"
+        app:layout_constraintTop_toBottomOf="@+id/btnEnter"
+        app:layout_constraintVertical_bias="0.843" />
+
+    <EditText
+        android:id="@+id/editTextPin"
+        android:layout_width="@dimen/_144sdp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="PIN"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontalAlign"
+        app:layout_constraintEnd_toEndOf="@id/guidelinePINFIELD2"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="@id/guidelinePINFIELD1"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleForPIN"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <Button
+        android:id="@+id/btnEnter"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="256dp"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="7"
+        android:shadowRadius="6"
+        android:text="Entry"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinePINFIELD2"
+        app:layout_constraintStart_toStartOf="@+id/guidelinePINFIELD1"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalAlign"
+        app:layout_constraintVertical_bias="0.407" />
+
+    <TextView
+        android:id="@+id/textViewAttempt"
+        android:layout_width="198dp"
+        android:layout_height="88dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontalAlign"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineErrorFieldEND2"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/guidelineErrorFieldStart"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPin"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <TextView
+        android:id="@+id/txtTitleForPIN"
+        android:layout_width="@dimen/_144sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="168dp"
+        android:text="Enter PIN:"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontalAlign"
+        app:layout_constraintEnd_toEndOf="@id/guidelinePINFIELD2"
+        app:layout_constraintStart_toStartOf="@id/guidelinePINFIELD1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.541"
-        />
+        app:layout_constraintVertical_bias="0.015" />
 
-    <EditText
-        android:id="@+id/editTxtFirstName"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/txtTitleForLogin"
+        android:layout_width="@dimen/_144sdp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:ems="10"
-        android:hint="First name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="3dp"
+        android:gravity="center"
+        android:text="LOG IN"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontalAlign"
+        app:layout_constraintEnd_toEndOf="@id/guidelinePINFIELD2"
+        app:layout_constraintHorizontal_bias="0.315"
+        app:layout_constraintStart_toStartOf="@id/guidelinePINFIELD1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        />
+        app:layout_constraintVertical_bias="0.228" />
 
-    <EditText
-        android:id="@+id/editTxtLastName"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePINFIELD1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Last name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/editTxtFirstName"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTxtFirstName"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtFirstName"
-        app:layout_constraintVertical_bias="0.134" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
 
-    <EditText
-        android:id="@+id/editTxtAge"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePINFIELD2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Age"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/editTxtLastName"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/editTxtLastName"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtLastName"
-        app:layout_constraintVertical_bias="0.304" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.76" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineErrorFieldEND2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineErrorFieldStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontalAlign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.50" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

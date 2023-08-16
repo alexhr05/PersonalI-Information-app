@@ -93,9 +93,6 @@ public class AddingNewElements extends AppCompatActivity {
                                 EncryptionUtils obj = new EncryptionUtils();
                                 String encryptedData = obj.encrypt(password, data);
                                 String encodedStringWithoutNewlines = encryptedData.replace("\n", "").replace("\r", "");
-                                Log.d("Encryption", "'Encrypted Data: " + encodedStringWithoutNewlines +"'");
-
-                               // Log.d("Decryption", "Decrypted Data: " + decryptedData);
 
                                 file.write((encodedStringWithoutNewlines+"\n").getBytes());
                                 file.close();
@@ -111,9 +108,8 @@ public class AddingNewElements extends AppCompatActivity {
                         }
 
                     }else{
-                       // showCustomToast("Някое от полетата не е попълнено", android.R.color.holo_red_light);
                         //Toast.makeText(AddingNewElements.this,"Някое от полетата не е попълнено" , Toast.LENGTH_SHORT).show();
-                        txtError.setText("Някое от полетата не е попълнено!");
+                        txtError.setText("One of the fields is not filled!");
                     }
                 }
             });
@@ -228,7 +224,7 @@ public class AddingNewElements extends AppCompatActivity {
                         }
 
                     }else{
-                        Toast.makeText(AddingNewElements.this, "Някое от полетата не е попълнено", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddingNewElements.this, "One of the fields is not filled!", Toast.LENGTH_SHORT).show();
 
                     }
                 }
@@ -241,19 +237,6 @@ public class AddingNewElements extends AppCompatActivity {
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
         return Environment.MEDIA_MOUNTED.equals(state);
-    }
-
-    public void showCustomToast(String message, int textColor) {
-        Toast toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT);
-
-        // Get the Toast's TextView and set its background color
-        View view = toast.getView();
-
-        // Get the TextView of the Toast and set its text color
-        TextView text = view.findViewById(android.R.id.message);
-        text.setTextColor(textColor);
-
-        toast.show();
     }
 
 }

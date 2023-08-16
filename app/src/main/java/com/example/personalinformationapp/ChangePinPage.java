@@ -27,6 +27,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ChangePinPage extends AppCompatActivity {
     TextView txtTitle, txtPIN, txtNewPIN, txtNewPINRepeat, txtError;
@@ -75,12 +76,15 @@ public class ChangePinPage extends AppCompatActivity {
                 String oldPin = edTextOldPin.getText().toString();
                 String newPin = edTextNewPin.getText().toString();
                 String newPinRepeat = edTextRepeatPin.getText().toString();
-                ArrayList<String> allSettingsInfo = new ArrayList<>();
+
 
                 if(!oldPin.isEmpty() && !newPin.isEmpty() && !newPinRepeat.isEmpty()){
                     String password = "YourPassword";
-                    EncryptionUtils object = new EncryptionUtils();
+                    EncryptionUtils objectEncryption = new EncryptionUtils();
+                    ArrayList<String> allSettingsInfo = new ArrayList<>();
+
                     if(isExternalStorageWritable()){
+                        // Write the modified content back to the file
                         try {
                             String filename = "Settings.txt";
                             String filepath = "MyDirs";
@@ -89,32 +93,44 @@ public class ChangePinPage extends AppCompatActivity {
                             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                             String line = "";
+                            Toast.makeText(ChangePinPage.this, "myExternalFile="+myExternalFile, Toast.LENGTH_SHORT).show();
                             while ((line = bufferedReader.readLine()) != null) {
                                 allSettingsInfo.add(line);
                             }
+                            String decryptedPin = objectEncryption.decrypt(password, allSettingsInfo.get(LineInSettingsFile.pinLine.ordinal()));
 
-                            String decryptedPin = object.decrypt(password, allSettingsInfo.get(0));
+                            int positionElementToCheck = LineInSettingsFile.pinLine.ordinal();
 
                             if(decryptedPin.equals(oldPin)){
                                 StringBuilder content = new StringBuilder();
 
-                                // Write the modified content back to the file
-                                BufferedWriter writer = new BufferedWriter(new FileWriter(myExternalFile));
-                                EncryptionUtils obj = new EncryptionUtils();
-                                String encryptedData = obj.encrypt(password, newPin);
-                                line = "";
-                                int lineToModify = 1; // The line number to modify
-                                int currentLine = 1;
-                                while ((line = bufferedReader.readLine()) != null) {
-                                    if (currentLine == lineToModify) {
-                                        // Modify the desired line
-                                        line = "" + encryptedData;
-                                    }
-                                    content.append(line).append(System.lineSeparator());
-                                    currentLine++;
+
+                                String encryptedData = "";
+                                String encodedStringWithoutNewlines = "";
+
+                                try {
+                                    encryptedData = objectEncryption.encrypt(password, newPin);
+                                    encodedStringWithoutNewlines = encryptedData.replace("\n", "").replace("\r", "");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
                                 }
-                                writer.write(content.toString());
-                                writer.close();
+                                if (positionElementToCheck >= 0 && positionElementToCheck < allSettingsInfo.size()) {
+                                    allSettingsInfo.set(positionElementToCheck, encodedStringWithoutNewlines);
+                                }
+
+                                // Write the modified content back to the file
+                                try {
+                                    FileOutputStream fos = new FileOutputStream(myExternalFile);
+
+                                    for (String allSettingsInfoByRow : allSettingsInfo) {
+                                        fos.write(allSettingsInfoByRow.getBytes());
+                                        fos.write("\n".getBytes()); // Add newline character after each line
+                                    }
+
+                                    fos.close();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
 
                                 Intent intent = new Intent(ChangePinPage.this, Settings.class);
                                 startActivity(intent);

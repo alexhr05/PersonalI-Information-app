@@ -71,6 +71,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        linearLayout = holder.itemView.findViewById(R.id.LineBorder);
         holder.placeToLog.setText(items.get(position).getPlaceToLog());
         holder.emailUsername.setText(items.get(position).getEmailUsername());
         holder.password.setText(hideItemPassword.get(holder.getAdapterPosition()));
@@ -84,8 +85,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             holder.placeToLog.setTextColor(ContextCompat.getColor(context, R.color.white));
             holder.emailUsername.setTextColor(ContextCompat.getColor(context, R.color.white));
             holder.password.setTextColor(ContextCompat.getColor(context, R.color.white));
-
-         //   holder.linearLayout.setBackgroundColor(context.getResources().getColor(R.color.white));
+            linearLayout.setBackgroundResource(R.drawable.white_background_resource_linearlayout);
 
             holder.btnViewInfo.setTextColor(ContextCompat.getColor(context, R.color.white));
             holder.btnViewInfo.setBackgroundColor(context.getResources().getColor(R.color.blue_dark_mode));
@@ -96,7 +96,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         } else {
             Toast.makeText(context, "LIGHT MODE", Toast.LENGTH_SHORT).show();
-            //holder.linearLayout.setBackgroundColor(context.getResources().getColor(R.color.black));
         }
         Log.d("hidePassword",hideItemPassword.get(holder.getAdapterPosition()));
         // Show info in Edit mode
@@ -211,8 +210,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 // Inflate the pop-up window layout
                 Log.d("POP_UP_WINDOW","minava");
                 AlertDialog.Builder builder = new AlertDialog.Builder(context)
-                        .setTitle("Триене на съдържание")
-                        .setMessage("Сигурен ли си, че искаш да изтриеш информацията за ")
+                        .setTitle("Friction of contents")
+                        .setMessage("Are you sure you want to delete the information about " + holder.placeToLog.getText().toString() + " ?")
                         .setIcon(R.drawable.ic_baseline_delete_24)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override

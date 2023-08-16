@@ -36,8 +36,8 @@
 
     <EditText
         android:id="@+id/edTextRepeatPin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_210sdp"
+        android:layout_height="@dimen/_42sdp"
         android:ems="10"
         android:hint="Repeat PIN"
         android:inputType="numberPassword"
@@ -52,8 +52,8 @@
 
     <TextView
         android:id="@+id/txtNewPINRepeat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_172sdp"
+        android:layout_height="@dimen/_24sdp"
         android:text="Repeat your new PIN: "
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toTopOf="@+id/edTextRepeatPin"
@@ -65,10 +65,10 @@
 
     <TextView
         android:id="@+id/txtError"
-        android:layout_width="251dp"
-        android:layout_height="40dp"
-        android:textSize="@dimen/_18sdp"
+        android:layout_width="@dimen/_225sdp"
+        android:layout_height="@dimen/_50sdp"
         android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toTopOf="@+id/btnSaveNewPIN"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndFirstLogin"
         app:layout_constraintHorizontal_bias="0.496"
@@ -77,8 +77,8 @@
 
     <EditText
         android:id="@+id/edTextOldPin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_210sdp"
+        android:layout_height="@dimen/_42sdp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="90dp"
         android:ems="10"
@@ -95,8 +95,8 @@
 
     <TextView
         android:id="@+id/txtPIN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_152sdp"
+        android:layout_height="@dimen/_24sdp"
         android:layout_marginTop="24dp"
         android:text="Write your old PIN: "
         android:textSize="@dimen/_18sdp"
@@ -108,8 +108,8 @@
 
     <EditText
         android:id="@+id/edTextNewPin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_210sdp"
+        android:layout_height="@dimen/_42sdp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="108dp"
         android:ems="10"
@@ -126,21 +126,20 @@
 
     <TextView
         android:id="@+id/txtNewPIN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_170sdp"
+        android:layout_height="@dimen/_24sdp"
         android:text="Write your new PIN: "
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toTopOf="@+id/edTextNewPin"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndFirstLogin"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartFirstLogin"
         app:layout_constraintTop_toBottomOf="@+id/txtPIN"
-        app:layout_constraintVertical_bias="0.857" />
+        app:layout_constraintVertical_bias="0.811" />
 
     <TextView
         android:id="@+id/txtTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_142sdp"
+        android:layout_height="@dimen/_35sdp"
         android:layout_marginTop="72dp"
         android:text="Change PIN "
         android:textSize="@dimen/_26sdp"
@@ -153,14 +152,14 @@
 
     <Button
         android:id="@+id/btnSaveNewPIN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="104dp"
+        android:layout_width="@dimen/_95sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginBottom="32dp"
         android:text="Save"
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndFirstLogin"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartFirstLogin"
         app:layout_constraintTop_toTopOf="@+id/guidelineEndBottomFirstLogin"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.835" />
 </androidx.constraintlayout.widget.ConstraintLayout>
