@@ -68,7 +68,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.information_view,parent,false));
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
+   // @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         linearLayout = holder.itemView.findViewById(R.id.LineBorder);
@@ -210,7 +210,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 // Inflate the pop-up window layout
                 Log.d("POP_UP_WINDOW","minava");
                 AlertDialog.Builder builder = new AlertDialog.Builder(context)
-                        .setTitle("Friction of contents")
+                        .setTitle("Deleting contents")
                         .setMessage("Are you sure you want to delete the information about " + holder.placeToLog.getText().toString() + " ?")
                         .setIcon(R.drawable.ic_baseline_delete_24)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
