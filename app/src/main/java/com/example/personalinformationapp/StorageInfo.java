@@ -98,7 +98,7 @@ public class StorageInfo extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(StorageInfo.this,items,hideItemPassword));
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
-            Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
             txtWebsiteTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtUserNameTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtPasswordTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
@@ -107,7 +107,7 @@ public class StorageInfo extends AppCompatActivity {
 
 
         } else {
-            Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
         }
         btnAddNewInformation.setOnClickListener(new View.OnClickListener() {
             @Override

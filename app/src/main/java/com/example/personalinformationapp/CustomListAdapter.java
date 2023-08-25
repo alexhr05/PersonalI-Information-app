@@ -40,7 +40,7 @@ public class CustomListAdapter extends ArrayAdapter<Item> {
         int currentNightMode = convertView.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
-            Toast.makeText(convertView.getContext(), "DARK MODE", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(convertView.getContext(), "DARK MODE", Toast.LENGTH_SHORT).show();
             placeToLog.setTextColor(ContextCompat.getColor(convertView.getContext(), R.color.white));
             emailUsername.setTextColor(ContextCompat.getColor(convertView.getContext(), R.color.white));
             password.setTextColor(ContextCompat.getColor(convertView.getContext(), R.color.white));
@@ -53,7 +53,7 @@ public class CustomListAdapter extends ArrayAdapter<Item> {
             btnEditInfo.setBackgroundColor(convertView.getResources().getColor(R.color.blue_dark_mode));
 
         } else {
-            Toast.makeText(convertView.getContext(), "LIGHT MODE", Toast.LENGTH_SHORT).show();
+      //      Toast.makeText(convertView.getContext(), "LIGHT MODE", Toast.LENGTH_SHORT).show();
         }
 
         // Set click listeners for buttons if needed

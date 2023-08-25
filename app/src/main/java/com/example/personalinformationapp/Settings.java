@@ -56,7 +56,7 @@ public class Settings extends AppCompatActivity {
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
-            Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
             txtTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
             btnSwitchFingerprint.setTextColor(ContextCompat.getColor(this, R.color.white));
 
@@ -72,7 +72,7 @@ public class Settings extends AppCompatActivity {
 
 
         } else {
-            Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
+   //         Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
             imgViewFingerPrint.setImageResource(R.drawable.fingerprint_black);
         }
 
@@ -96,7 +96,7 @@ public class Settings extends AppCompatActivity {
         if(fingerprintStatement != null)
             seperateInfoFromFile = fingerprintStatement.split(" ");
         else
-            Toast.makeText(this, "Данните не са прочетени от файла с настройки!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Data not read from settings file!", Toast.LENGTH_LONG).show();
 
         btnSwitchFingerprint.setChecked(Boolean.parseBoolean(seperateInfoFromFile[1]));
         btnSwitchPin.setChecked(Boolean.parseBoolean(seperateInfoFromFile[2]));

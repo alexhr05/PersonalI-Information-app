@@ -87,6 +87,18 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:id="@+id/txtError"
+        android:layout_width="@dimen/_225sdp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinueSecondStep"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndFirstLogin"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartFirstLogin"
+        app:layout_constraintTop_toTopOf="@+id/guidelineEndBottomFirstLogin"
+        app:layout_constraintVertical_bias="0.391" />
+
+    <TextView
         android:id="@+id/txtPINRepeat"
         android:layout_width="@dimen/_140sdp"
         android:layout_height="@dimen/_24sdp"
@@ -121,8 +133,7 @@
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndFirstLogin"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartFirstLogin"
         app:layout_constraintTop_toTopOf="@+id/guidelineEndBottomFirstLogin"
-        app:layout_constraintVertical_bias="0.707" />
+        app:layout_constraintVertical_bias="0.901" />
 </androidx.constraintlayout.widget.ConstraintLayout>

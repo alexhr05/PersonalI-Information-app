@@ -53,7 +53,7 @@ public class ChangePinPage extends AppCompatActivity {
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
-            Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
 
             txtTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtPIN.setTextColor(ContextCompat.getColor(this, R.color.white));
@@ -66,7 +66,7 @@ public class ChangePinPage extends AppCompatActivity {
 
             btnSaveNewPIN.setTextColor(ContextCompat.getColor(this, R.color.white));
         } else {
-            Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
 
         }
 
@@ -93,7 +93,7 @@ public class ChangePinPage extends AppCompatActivity {
                             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                             String line = "";
-                            Toast.makeText(ChangePinPage.this, "myExternalFile="+myExternalFile, Toast.LENGTH_SHORT).show();
+                        //    Toast.makeText(ChangePinPage.this, "myExternalFile="+myExternalFile, Toast.LENGTH_SHORT).show();
                             while ((line = bufferedReader.readLine()) != null) {
                                 allSettingsInfo.add(line);
                             }

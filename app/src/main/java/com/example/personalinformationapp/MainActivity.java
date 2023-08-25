@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         intentFilter.addDataScheme("package");
 
 
-        Toast.makeText(this, "isFirstTime="+isFirstTime, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "isFirstTime="+isFirstTime, Toast.LENGTH_SHORT).show();
         if (isFirstTime) {
             // This is the first time the app is being launched
             try {
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
-            Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
 
             btnLogin.setTextColor(ContextCompat.getColor(this, R.color.white));
 
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             txtTitleForLogin.setTextColor(ContextCompat.getColor(this, R.color.white));
 
         } else {
-            Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
 
         }
 
@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Personal Information numbers of People- (PINOP)")
+                .setTitle("Personal Information Credentials- (PIC)")
                 .setSubtitle("Firstly, Login in with your finger print and then you can log with username and password")
                 .setDescription("After you login it you will have access the save and look all of your information")
                 .setNegativeButtonText("X")

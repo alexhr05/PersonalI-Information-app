@@ -37,7 +37,7 @@ public class AboutAuthor extends AppCompatActivity {
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
-            Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
 
             txtTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtParagraph.setTextColor(ContextCompat.getColor(this, R.color.white));
@@ -45,7 +45,7 @@ public class AboutAuthor extends AppCompatActivity {
             txtBack.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtBackArrow.setTextColor(ContextCompat.getColor(this, R.color.white));
         } else {
-            Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
         }
 
         // lambda function

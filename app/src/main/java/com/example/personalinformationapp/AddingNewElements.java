@@ -60,14 +60,14 @@ public class AddingNewElements extends AppCompatActivity {
 
 
             if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
-                Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
                 txtTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
                 txtWebsite.setTextColor(ContextCompat.getColor(this, R.color.white));
                 txtEmailUsername.setTextColor(ContextCompat.getColor(this, R.color.white));
                 txtPassword.setTextColor(ContextCompat.getColor(this, R.color.white));
 
             } else {
-                Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
 
             }
 
@@ -140,7 +140,7 @@ public class AddingNewElements extends AppCompatActivity {
             txtPassword = findViewById(R.id.txtPassword);
 
             if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
-                Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
                 txtTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
                 txtWebsite.setTextColor(ContextCompat.getColor(this, R.color.white));
 
@@ -148,7 +148,7 @@ public class AddingNewElements extends AppCompatActivity {
                 txtPassword.setTextColor(ContextCompat.getColor(this, R.color.white));
 
             } else {
-                Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
 
             }
 

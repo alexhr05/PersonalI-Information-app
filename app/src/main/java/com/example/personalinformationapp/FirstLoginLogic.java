@@ -22,7 +22,7 @@ public class FirstLoginLogic extends AppCompatActivity {
     Button btnContinueSecondStep;
     EditText edTextPin, edTextRepeatPin;
 
-    TextView txtTitle, txtPIN, txtPINRepeat;
+    TextView txtTitle, txtPIN, txtPINRepeat, txtError;
     String pinField, repeatPinField;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class FirstLoginLogic extends AppCompatActivity {
         txtTitle = findViewById(R.id.txtTitle);
         txtPIN = findViewById(R.id.txtPIN);
         txtPINRepeat = findViewById(R.id.txtPINRepeat);
+        txtError = findViewById(R.id.txtError);
 
         edTextPin = findViewById(R.id.edTextPin);
         edTextRepeatPin = findViewById(R.id.edTextRepeatPin);
@@ -41,7 +42,7 @@ public class FirstLoginLogic extends AppCompatActivity {
         int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
-            Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "DARK MODE", Toast.LENGTH_SHORT).show();
             txtTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtPIN.setTextColor(ContextCompat.getColor(this, R.color.white));
             txtPINRepeat.setTextColor(ContextCompat.getColor(this, R.color.white));
@@ -53,7 +54,7 @@ public class FirstLoginLogic extends AppCompatActivity {
 
 
         } else {
-            Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "LIGHT MODE", Toast.LENGTH_SHORT).show();
 
         }
 
@@ -88,8 +89,8 @@ public class FirstLoginLogic extends AppCompatActivity {
 
                     }
                 }else{
-                    Toast.makeText(FirstLoginLogic.this, "Някое от полетата не са попълнение или не сте въвели PIN в двете полета", Toast.LENGTH_SHORT).show();
-
+                    //Toast.makeText(FirstLoginLogic.this, "Някое от полетата не са попълнение или не сте въвели PIN в двете полета", Toast.LENGTH_LONG ).show();
+                    txtError.setText("One of the fields is not filled in or the PIN does not match!");
                 }
             }
         });

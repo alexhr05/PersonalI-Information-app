@@ -81,7 +81,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         int currentNightMode = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
-            Toast.makeText(context, "DARK MODE", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, "DARK MODE", Toast.LENGTH_SHORT).show();
             holder.placeToLog.setTextColor(ContextCompat.getColor(context, R.color.white));
             holder.emailUsername.setTextColor(ContextCompat.getColor(context, R.color.white));
             holder.password.setTextColor(ContextCompat.getColor(context, R.color.white));
@@ -95,9 +95,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             holder.btnEditInfo.setBackgroundColor(context.getResources().getColor(R.color.blue_dark_mode));
 
         } else {
-            Toast.makeText(context, "LIGHT MODE", Toast.LENGTH_SHORT).show();
+        //    Toast.makeText(context, "LIGHT MODE", Toast.LENGTH_SHORT).show();
         }
-        Log.d("hidePassword",hideItemPassword.get(holder.getAdapterPosition()));
+    //    Log.d("hidePassword",hideItemPassword.get(holder.getAdapterPosition()));
         // Show info in Edit mode
         holder.placeToLog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,16 +157,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             @Override
             public void onClick(View view) {
                 MyViewHolder clickedViewHolder = holder;
-                Log.d("RAZGRANICHITEL","----------------------------");
+         //       Log.d("RAZGRANICHITEL","----------------------------");
                 clickedViewHolder.password.setText(items.get(holder.getAdapterPosition()).getPassword());
 
                 for(int i = 0; i < getItemCount(); i++){
                     if(holder.getAdapterPosition() != i){
 
 
-                        Log.d("index",""+i);
-                        Log.d("HidePassword",hideItemPassword.get(i));
-                        Log.d("Password",items.get(i).getPassword());
+         //               Log.d("index",""+i);
+        //                Log.d("HidePassword",hideItemPassword.get(i));
+        //                Log.d("Password",items.get(i).getPassword());
                        // holder.password.setText(hideItemPassword.get(i));
                         notifyItemChanged(i);
                         //items.get(i).setPassword(hidePassword);
@@ -180,7 +180,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
 
                 }
-                Log.d("holder.getAdapterPosition()=",""+holder.getAdapterPosition());
+        //        Log.d("holder.getAdapterPosition()=",""+holder.getAdapterPosition());
 
             }
         });
@@ -208,7 +208,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             @Override
             public void onClick(View view) {
                 // Inflate the pop-up window layout
-                Log.d("POP_UP_WINDOW","minava");
+//                Log.d("POP_UP_WINDOW","minava");
                 AlertDialog.Builder builder = new AlertDialog.Builder(context)
                         .setTitle("Deleting contents")
                         .setMessage("Are you sure you want to delete the information about " + holder.placeToLog.getText().toString() + " ?")
@@ -216,7 +216,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Log.d("index Item=",""+holder.getAdapterPosition());
+//                                Log.d("index Item=",""+holder.getAdapterPosition());
                                 items.remove(holder.getAdapterPosition());
                                 try{
                                     String filepath = "MyDirs";
@@ -253,14 +253,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                                 //dialog.cancel();
                             }
                         });
-                Log.d("context",""+context);
+//                Log.d("context",""+context);
                 builder.show();
 
                 // Find views and set click listener for any buttons or views inside the pop-up window
 
                 // Show the pop-up window
-                Log.d("POP_UP_WINDOW","minava");
-                Log.d("POP_UP_WINDOW","TRQBVA DA STANE");
+ //               Log.d("POP_UP_WINDOW","minava");
+ //               Log.d("POP_UP_WINDOW","TRQBVA DA STANE");
                 //popupWindow.showAtLocation(popupView, Gravity.CENTER, 0, 0);
             }
         });
