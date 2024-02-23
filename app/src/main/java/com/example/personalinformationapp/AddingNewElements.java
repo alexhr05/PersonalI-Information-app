@@ -4,15 +4,19 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -34,7 +38,7 @@ public class AddingNewElements extends AppCompatActivity {
     Button btnSaveimg;
     EditText placeToLog, emailUsername, password;
     TextView textView, txtTitle, txtWebsite, txtEmailUsername, txtPassword, txtError;
-
+    TextInputLayout txtInputLayout_edTxtPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,6 +137,8 @@ public class AddingNewElements extends AppCompatActivity {
             placeToLog.setText(placeToLogToCheck);
             emailUsername.setText(usernameToCheck);
             password.setText(passwordToCheck);
+            password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
 
             txtTitle = findViewById(R.id.txtTitle);
             txtWebsite = findViewById(R.id.txtWebsite);

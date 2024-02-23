@@ -106,20 +106,17 @@
         app:layout_constraintTop_toTopOf="@+id/guideline5"
         app:layout_constraintVertical_bias="1.0" />
 
-    <EditText
-        android:id="@+id/edTxtPassword"
-        android:layout_width="@dimen/_230sdp"
-        android:layout_height="@dimen/_32sdp"
-        android:ems="10"
-        android:hint="Ex: Qwery123/ pOiuyt321 и други"
-        android:inputType="textPersonName"
-        android:textSize="@dimen/_13sdp"
-        app:layout_constraintBottom_toTopOf="@+id/txtError"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
-        app:layout_constraintTop_toTopOf="@+id/guideline6"
-        app:layout_constraintVertical_bias="0.194" />
+
+
+    <!--    <ImageView-->
+<!--        android:id="@+id/imageView_show_hide_password"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_below="@+id/txtError"-->
+<!--        android:layout_marginEnd="188dp"-->
+<!--        android:layout_marginBottom="44dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/txtError"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
 
     <Button
         android:id="@+id/btnSaveInformation"
@@ -166,6 +163,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.58" />
+        app:layout_constraintGuide_percent="0.58"
+        app:passwordToggleEnabled="true"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintBottom_toTopOf="@+id/txtError"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guideLineStart"
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.398"
+        app:passwordToggleEnabled="true"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/edTxtPassword"
+            android:layout_width="@dimen/_230sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:ems="10"
+            android:hint="Ex: Qwery123/ pOiuyt321 и други"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintBottom_toTopOf="@+id/txtError"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintHorizontal_bias="0.44"
+            app:layout_constraintStart_toStartOf="@+id/guideLineStart"
+            app:layout_constraintTop_toTopOf="@+id/guideline6"
+            app:layout_constraintVertical_bias="0.176" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
